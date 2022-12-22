@@ -13,7 +13,6 @@ import os
 # In[2]:
 
 
-
 s_fname = "C:\\Users\simmt\Code1\Pesticide\data\August_2022_rolling_reports.ods"
 # doc = ezodf.opendoc(s_fname)
 

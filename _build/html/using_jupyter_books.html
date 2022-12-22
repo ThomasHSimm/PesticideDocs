@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Using Jupyter Books &#8212; Defra Pesticide Testing, Data Analysis</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -106,7 +107,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Welcome to your Jupyter Book
+                    Defra Pesticide Testing, Data Analysis
                 </a>
             </li>
         </ul>
@@ -341,6 +342,13 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#modifying-cells-tags">
    Modifying cells- Tags
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#some-tags-to-use">
+     Some tags to use:
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -370,6 +378,13 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#modifying-cells-tags">
    Modifying cells- Tags
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#some-tags-to-use">
+     Some tags to use:
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -381,11 +396,11 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="using-jupyter-books">
+  <section class="tex2jax_ignore mathjax_ignore" id="using-jupyter-books">
 <h1>Using Jupyter Books<a class="headerlink" href="#using-jupyter-books" title="Permalink to this headline">#</a></h1>
 <p>The documentation uses <a class="reference external" href="https://jupyterbook.org/en/stable/start/overview.html">jupyterbook.org</a> to convert Jupyter notebooks into html files.</p>
 <p>This page details some basics of it’s use.</p>
-<div class="section" id="installation">
+<section id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h2>
 <p>In a terminal:</p>
 <p><code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">install</span> <span class="pre">-U</span> <span class="pre">jupyter-book</span></code></p>
@@ -396,15 +411,49 @@ title="Print to PDF"
 <p>And build it with:</p>
 <p><code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span> <span class="pre">mynewbook/</span></code></p>
 <p>Create produces a standard set-up and build is used to create the html pages within the <code class="docutils literal notranslate"><span class="pre">_build/html</span></code> folder</p>
-</div>
-<div class="section" id="modifying-cells-tags">
+</section>
+<section id="modifying-cells-tags">
 <h2>Modifying cells- Tags<a class="headerlink" href="#modifying-cells-tags" title="Permalink to this headline">#</a></h2>
 <p>If we want to hide cells, their output or input. The following procedure is used by adding a tag to each cell.</p>
 <p>First make the tags visible going to View-&gt; Cell Toolbar-&gt; Tags</p>
 <p><img src='_images/tags2.png' style="border:2px solid #B9B7B9; padding:3px; margin:5px"></img></p>
 <p>Then add a tag in the box and press <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">tag</span></code></p>
 <p><img src='_images/tags2.png' style="border:2px solid #B9B7B9; padding:3px; margin:5px"></img></p>
-<p>Some tags to use:</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import numpy as np
+import matplotlib.pyplot as plt
+plt.ion()
+
+data = np.random.randn(2, 100)
+fig, ax = plt.subplots()
+ax.scatter(*data, c=data[1], s=100*np.abs(data[0]));
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/using_jupyter_books_4_0.png" src="_images/using_jupyter_books_4_0.png" />
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>#hide-input
+import numpy as np
+import matplotlib.pyplot as plt
+plt.ion()
+
+data = np.random.randn(2, 100)
+fig, ax = plt.subplots()
+ax.scatter(*data, c=data[1], s=100*np.abs(data[0]));
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/using_jupyter_books_5_0.png" src="_images/using_jupyter_books_5_0.png" />
+</div>
+</div>
+<section id="some-tags-to-use">
+<h3>Some tags to use:<a class="headerlink" href="#some-tags-to-use" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>hide, can be reavealed with a box to click</p>
 <ul>
@@ -423,39 +472,146 @@ title="Print to PDF"
 </ul>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ion</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import altair as alt
+from vega_datasets import data
 
-<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]));</span>
+movies = alt.UrlData(
+    data.movies.url,
+    format=alt.DataFormat(parse={&quot;Release_Date&quot;:&quot;date&quot;})
+)
+ratings = [&#39;G&#39;, &#39;NC-17&#39;, &#39;PG&#39;, &#39;PG-13&#39;, &#39;R&#39;]
+genres = [&#39;Action&#39;, &#39;Adventure&#39;, &#39;Black Comedy&#39;, &#39;Comedy&#39;,
+       &#39;Concert/Performance&#39;, &#39;Documentary&#39;, &#39;Drama&#39;, &#39;Horror&#39;, &#39;Musical&#39;,
+       &#39;Romantic Comedy&#39;, &#39;Thriller/Suspense&#39;, &#39;Western&#39;]
+
+base = alt.Chart(movies, width=200, height=200).mark_point(filled=True).transform_calculate(
+    Rounded_IMDB_Rating = &quot;floor(datum.IMDB_Rating)&quot;,
+    Hundred_Million_Production =  &quot;datum.Production_Budget &gt; 100000000.0 ? 100 : 10&quot;,
+    Release_Year = &quot;year(datum.Release_Date)&quot;
+).transform_filter(
+    alt.datum.IMDB_Rating &gt; 0
+).transform_filter(
+    alt.FieldOneOfPredicate(field=&#39;MPAA_Rating&#39;, oneOf=ratings)
+).encode(
+    x=alt.X(&#39;Worldwide_Gross:Q&#39;, scale=alt.Scale(domain=(100000,10**9), clamp=True)),
+    y=&#39;IMDB_Rating:Q&#39;,
+    tooltip=&quot;Title:N&quot;
+)
+
+# A slider filter
+year_slider = alt.binding_range(min=1969, max=2018, step=1)
+slider_selection = alt.selection_single(bind=year_slider, fields=[&#39;Release_Year&#39;], name=&quot;Release Year_&quot;)
+
+
+filter_year = base.add_selection(
+    slider_selection
+).transform_filter(
+    slider_selection
+).properties(title=&quot;Slider Filtering&quot;)
+
+# A dropdown filter
+genre_dropdown = alt.binding_select(options=genres)
+genre_select = alt.selection_single(fields=[&#39;Major_Genre&#39;], bind=genre_dropdown, name=&quot;Genre&quot;)
+
+filter_genres = base.add_selection(
+    genre_select
+).transform_filter(
+    genre_select
+).properties(title=&quot;Dropdown Filtering&quot;)
+
+#color changing marks
+rating_radio = alt.binding_radio(options=ratings)
+
+rating_select = alt.selection_single(fields=[&#39;MPAA_Rating&#39;], bind=rating_radio, name=&quot;Rating&quot;)
+rating_color_condition = alt.condition(rating_select,
+                      alt.Color(&#39;MPAA_Rating:N&#39;, legend=None),
+                      alt.value(&#39;lightgray&#39;))
+
+highlight_ratings = base.add_selection(
+    rating_select
+).encode(
+    color=rating_color_condition
+).properties(title=&quot;Radio Button Highlighting&quot;)
+
+# Boolean selection for format changes
+input_checkbox = alt.binding_checkbox()
+checkbox_selection = alt.selection_single(bind=input_checkbox, name=&quot;Big Budget Films&quot;)
+
+size_checkbox_condition = alt.condition(checkbox_selection,
+                                        alt.SizeValue(25),
+                                        alt.Size(&#39;Hundred_Million_Production:Q&#39;)
+                                       )
+
+budget_sizing = base.add_selection(
+    checkbox_selection
+).encode(
+    size=size_checkbox_condition
+).properties(title=&quot;Checkbox Formatting&quot;)
+
+( filter_year | filter_genres) &amp;  (highlight_ratings | budget_sizing  )
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/using_jupyter_books_4_0.png" src="_images/using_jupyter_books_4_0.png" />
-</div>
-</div>
-<div class="cell tag_hide-cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#hide-input</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ion</span><span class="p">()</span>
+<div class="output text_html">
+<div id="altair-viz-f82b0961cf1746a0a1d5387ad8209524"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-f82b0961cf1746a0a1d5387ad8209524") {
+      outputDiv = document.getElementById("altair-viz-f82b0961cf1746a0a1d5387ad8209524");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
 
-<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]));</span>
-</pre></div>
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "vconcat": [{"hconcat": [{"mark": {"type": "point", "filled": true}, "encoding": {"tooltip": {"field": "Title", "type": "nominal"}, "x": {"field": "Worldwide_Gross", "scale": {"clamp": true, "domain": [100000, 1000000000]}, "type": "quantitative"}, "y": {"field": "IMDB_Rating", "type": "quantitative"}}, "height": 200, "selection": {"Release Year_": {"type": "single", "bind": {"input": "range", "max": 2018, "min": 1969, "step": 1}, "fields": ["Release_Year"]}}, "title": "Slider Filtering", "transform": [{"calculate": "floor(datum.IMDB_Rating)", "as": "Rounded_IMDB_Rating"}, {"calculate": "datum.Production_Budget > 100000000.0 ? 100 : 10", "as": "Hundred_Million_Production"}, {"calculate": "year(datum.Release_Date)", "as": "Release_Year"}, {"filter": "(datum.IMDB_Rating > 0)"}, {"filter": {"field": "MPAA_Rating", "oneOf": ["G", "NC-17", "PG", "PG-13", "R"]}}, {"filter": {"selection": "Release Year_"}}], "width": 200}, {"mark": {"type": "point", "filled": true}, "encoding": {"tooltip": {"field": "Title", "type": "nominal"}, "x": {"field": "Worldwide_Gross", "scale": {"clamp": true, "domain": [100000, 1000000000]}, "type": "quantitative"}, "y": {"field": "IMDB_Rating", "type": "quantitative"}}, "height": 200, "selection": {"Genre": {"type": "single", "fields": ["Major_Genre"], "bind": {"input": "select", "options": ["Action", "Adventure", "Black Comedy", "Comedy", "Concert/Performance", "Documentary", "Drama", "Horror", "Musical", "Romantic Comedy", "Thriller/Suspense", "Western"]}}}, "title": "Dropdown Filtering", "transform": [{"calculate": "floor(datum.IMDB_Rating)", "as": "Rounded_IMDB_Rating"}, {"calculate": "datum.Production_Budget > 100000000.0 ? 100 : 10", "as": "Hundred_Million_Production"}, {"calculate": "year(datum.Release_Date)", "as": "Release_Year"}, {"filter": "(datum.IMDB_Rating > 0)"}, {"filter": {"field": "MPAA_Rating", "oneOf": ["G", "NC-17", "PG", "PG-13", "R"]}}, {"filter": {"selection": "Genre"}}], "width": 200}]}, {"hconcat": [{"mark": {"type": "point", "filled": true}, "encoding": {"color": {"condition": {"field": "MPAA_Rating", "legend": null, "type": "nominal", "selection": "Rating"}, "value": "lightgray"}, "tooltip": {"field": "Title", "type": "nominal"}, "x": {"field": "Worldwide_Gross", "scale": {"clamp": true, "domain": [100000, 1000000000]}, "type": "quantitative"}, "y": {"field": "IMDB_Rating", "type": "quantitative"}}, "height": 200, "selection": {"Rating": {"type": "single", "fields": ["MPAA_Rating"], "bind": {"input": "radio", "options": ["G", "NC-17", "PG", "PG-13", "R"]}}}, "title": "Radio Button Highlighting", "transform": [{"calculate": "floor(datum.IMDB_Rating)", "as": "Rounded_IMDB_Rating"}, {"calculate": "datum.Production_Budget > 100000000.0 ? 100 : 10", "as": "Hundred_Million_Production"}, {"calculate": "year(datum.Release_Date)", "as": "Release_Year"}, {"filter": "(datum.IMDB_Rating > 0)"}, {"filter": {"field": "MPAA_Rating", "oneOf": ["G", "NC-17", "PG", "PG-13", "R"]}}], "width": 200}, {"mark": {"type": "point", "filled": true}, "encoding": {"size": {"condition": {"value": 25, "selection": "Big Budget Films"}, "field": "Hundred_Million_Production", "type": "quantitative"}, "tooltip": {"field": "Title", "type": "nominal"}, "x": {"field": "Worldwide_Gross", "scale": {"clamp": true, "domain": [100000, 1000000000]}, "type": "quantitative"}, "y": {"field": "IMDB_Rating", "type": "quantitative"}}, "height": 200, "selection": {"Big Budget Films": {"type": "single", "bind": {"input": "checkbox"}}}, "title": "Checkbox Formatting", "transform": [{"calculate": "floor(datum.IMDB_Rating)", "as": "Rounded_IMDB_Rating"}, {"calculate": "datum.Production_Budget > 100000000.0 ? 100 : 10", "as": "Hundred_Million_Production"}, {"calculate": "year(datum.Release_Date)", "as": "Release_Year"}, {"filter": "(datum.IMDB_Rating > 0)"}, {"filter": {"field": "MPAA_Rating", "oneOf": ["G", "NC-17", "PG", "PG-13", "R"]}}], "width": 200}]}], "data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/movies.json", "format": {"parse": {"Release_Date": "date"}}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+</script></div></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/using_jupyter_books_5_0.png" src="_images/using_jupyter_books_5_0.png" />
-</div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
