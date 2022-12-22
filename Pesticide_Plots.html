@@ -1,0 +1,1557 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Pesticide: Summary of the data &#8212; Defra Pesticide Testing, Data Analysis</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/ONS-logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Defra Pesticide Testing, Data Analysis</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Defra Pesticide Testing, Data Analysis
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="markdown.html">
+   Markdown Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks.html">
+   Content with notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="markdown-notebooks.html">
+   Notebooks with MyST Markdown
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/ThomasHSimm/Pesticide/master?urlpath=tree/docs/Pesticide_Plots.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/ThomasHSimm/Pesticide"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/ThomasHSimm/Pesticide/issues/new?title=Issue%20on%20page%20%2FPesticide_Plots.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/Pesticide_Plots.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#imports">
+   Imports
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modify-functions">
+   Modify functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plot-functions">
+   Plot functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#changes-with-time">
+   Changes with time
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#other-stuff">
+   Other Stuff
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Pesticide: Summary of the data</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#imports">
+   Imports
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modify-functions">
+   Modify functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plot-functions">
+   Plot functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#changes-with-time">
+   Changes with time
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#other-stuff">
+   Other Stuff
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="pesticide-summary-of-the-data">
+<h1>Pesticide: Summary of the data<a class="headerlink" href="#pesticide-summary-of-the-data" title="Permalink to this headline">#</a></h1>
+<blockquote>
+<div><p>Summary plots and tables</p>
+</div></blockquote>
+<section id="imports">
+<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this headline">#</a></h2>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import pandas as pd
+from pandasql import sqldf
+import numpy as np
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+import os
+from pathlib import Path
+import sys
+
+
+module_path = Path( os.getcwd() )
+module_path = module_path.parent.__str__() + &#39;\\Pesticide&#39;
+
+sys.path.insert(0, module_path)
+
+module_path
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;C:\\Users\\44781\\Documents\\GitHub\\Pesticide&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from src.data_loading.loads_from_url import *
+from src.data_cleaning.modify_dfs import *
+from src.data_visualisation.plot_funcs import *
+
+
+cwd = module_path
+
+folder_path = os.path.join(cwd,&#39;data&#39;)
+file_path = []
+for x in os.listdir(folder_path):
+    file_path.append(os.path.join(folder_path,x) )
+
+# load data and clean    
+df = import_ods(file_path[2])
+
+df2 = modify_df(df)
+
+# needs to be added to modify
+df2[&#39;amount_pc&#39;]=df2[&#39;amount_detected&#39;]/df2[&#39;mrl&#39;]
+
+df2.loc[df2[&#39;amount_pc&#39;].isna(),[&#39;amount_pc&#39;]]=0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+df2.head()
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sample_id</th>
+      <th>date_of_sampling</th>
+      <th>description</th>
+      <th>country_of_origin</th>
+      <th>retail_outlet</th>
+      <th>address</th>
+      <th>brand_name</th>
+      <th>packer_/_manufacturer</th>
+      <th>pesticide_residues_found_in_mg/kg_(mrl)</th>
+      <th>product</th>
+      <th>address_postcode</th>
+      <th>packer__postcode</th>
+      <th>chem_name</th>
+      <th>amount_detected</th>
+      <th>mrl</th>
+      <th>amount_pc</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2464/2018</td>
+      <td>2018-06-18</td>
+      <td>The best natural beef dripping</td>
+      <td>UK</td>
+      <td>Morrisons</td>
+      <td>Basingstoke Road Reading RG2 0HB</td>
+      <td>Morrisons</td>
+      <td>Morrisons Gain Lane Bradford BD3 7DL</td>
+      <td>n/a</td>
+      <td>Animal_fats</td>
+      <td>RG2 0HB</td>
+      <td>BD3 7DL</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1700/2018</td>
+      <td>2018-04-30</td>
+      <td>Finest beef dripping</td>
+      <td>UK</td>
+      <td>Sainsburys</td>
+      <td>Tritton Road Lincoln LN6 7QN</td>
+      <td>Britannia</td>
+      <td>Princes LTD Liverpool L3 1NX</td>
+      <td>n/a</td>
+      <td>Animal_fats</td>
+      <td>LN6 7QN</td>
+      <td>L3 1NX</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3439/2018</td>
+      <td>2018-06-18</td>
+      <td>Finest beef dripping</td>
+      <td>UK</td>
+      <td>Sainsburys</td>
+      <td>Upton Bypass Wirral CH49 6QG</td>
+      <td>Brittania</td>
+      <td>Princes LTD Liverpool L3 1NX</td>
+      <td>n/a</td>
+      <td>Animal_fats</td>
+      <td>CH49 6QG</td>
+      <td>L3 1NX</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4247/2018</td>
+      <td>2018-04-09</td>
+      <td>Finest beef dripping</td>
+      <td>UK</td>
+      <td>Sainsburys</td>
+      <td>Sunderland North Riverside Road Sunderland SR5...</td>
+      <td>Britannia</td>
+      <td>Princes LTD Liverpool L3 1NX</td>
+      <td>n/a</td>
+      <td>Animal_fats</td>
+      <td>SR5 3TG</td>
+      <td>L3 1NX</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1771/2018</td>
+      <td>2018-04-09</td>
+      <td>Finest beef dripping</td>
+      <td>UK</td>
+      <td>Tesco</td>
+      <td>Dukes Green Avenue Feltham TW14 0LH</td>
+      <td>Britannia</td>
+      <td>Princes LTD Liverpool L3 1NX</td>
+      <td>n/a</td>
+      <td>Animal_fats</td>
+      <td>TW14 0LH</td>
+      <td>L3 1NX</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df2.describe(include=&#39;all&#39;, datetime_is_numeric=True)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sample_id</th>
+      <th>date_of_sampling</th>
+      <th>description</th>
+      <th>country_of_origin</th>
+      <th>retail_outlet</th>
+      <th>address</th>
+      <th>brand_name</th>
+      <th>packer_/_manufacturer</th>
+      <th>pesticide_residues_found_in_mg/kg_(mrl)</th>
+      <th>product</th>
+      <th>address_postcode</th>
+      <th>packer__postcode</th>
+      <th>chem_name</th>
+      <th>amount_detected</th>
+      <th>mrl</th>
+      <th>amount_pc</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>5285</td>
+      <td>5285</td>
+      <td>5285</td>
+      <td>5285</td>
+      <td>5285</td>
+      <td>5285</td>
+      <td>5285</td>
+      <td>5285</td>
+      <td>5285</td>
+      <td>5285</td>
+      <td>5285</td>
+      <td>5285.0</td>
+      <td>5285.0</td>
+      <td>5285.000000</td>
+      <td>5285.000000</td>
+      <td>5285.000000</td>
+    </tr>
+    <tr>
+      <th>unique</th>
+      <td>3285</td>
+      <td>NaN</td>
+      <td>1439</td>
+      <td>87</td>
+      <td>457</td>
+      <td>1350</td>
+      <td>434</td>
+      <td>1104</td>
+      <td>1719</td>
+      <td>40</td>
+      <td>550</td>
+      <td>332.0</td>
+      <td>143.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>top</th>
+      <td>2430/2018</td>
+      <td>NaN</td>
+      <td>Conference Pears</td>
+      <td>UK</td>
+      <td>Tesco</td>
+      <td>Edinburgh Road, Perth PH2 8DX</td>
+      <td>None stated</td>
+      <td>Tesco Stores Ltd Welwyn Garden City AL7 1GA</td>
+      <td>n/a</td>
+      <td>Grapefruit</td>
+      <td>PE19 2HD</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>freq</th>
+      <td>21</td>
+      <td>NaN</td>
+      <td>130</td>
+      <td>1653</td>
+      <td>653</td>
+      <td>68</td>
+      <td>1698</td>
+      <td>602</td>
+      <td>1716</td>
+      <td>390</td>
+      <td>97</td>
+      <td>2104.0</td>
+      <td>2032.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>NaN</td>
+      <td>2018-07-05 00:43:52.052980224</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.214598</td>
+      <td>2.644282</td>
+      <td>0.302054</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>NaN</td>
+      <td>2018-01-09 00:00:00</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>NaN</td>
+      <td>2018-04-23 00:00:00</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>NaN</td>
+      <td>2018-07-03 00:00:00</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.020000</td>
+      <td>0.500000</td>
+      <td>0.010000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>NaN</td>
+      <td>2018-09-30 00:00:00</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.090000</td>
+      <td>3.000000</td>
+      <td>0.066667</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>NaN</td>
+      <td>2018-12-04 00:00:00</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>35.000000</td>
+      <td>182.000000</td>
+      <td>240.000000</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.943315</td>
+      <td>7.341612</td>
+      <td>4.113542</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="modify-functions">
+<h2>Modify functions<a class="headerlink" href="#modify-functions" title="Permalink to this headline">#</a></h2>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def groupby_id_and_q(df2: pd.DataFrame,
+                     col_groupby: str = &#39;country_of_origin&#39;) -&gt; pd.DataFrame:
+    &quot;&quot;&quot;
+    Groups a Pandas DataFrame based on the sample_id and country_of_origin
+        the new dataframe has a new column number_of_tests
+        - this is the number of unique sample_ids
+        the other 2 numerical columns are means of previous values
+
+    Args:
+        df2 (pd.DataFrame): DataFrame of Pesticide data after 1st clean
+        col_groupby (str): Column to do 1st groupby
+
+    Raises:
+        ValueError: ??
+
+    Returns:
+        df2_grouped (pd.DataFrame): Pandas DataFrame grouped by id and country- note the mean is taken twice
+                                        1. When grouping by id
+                                        2. When grouping by col_groupby
+                                    the new dataframe has a new column number_of_tests
+                                        - this is the number of unique sample_ids
+                                    in addition to the previous numeric columns
+        df2_grouped_sample (pd.DataFrame): Pandas DataFrame grouped by id only
+    &quot;&quot;&quot;
+    
+    
+    # group by id
+    df2_grouped_sample = df2.groupby([&#39;sample_id&#39;,&#39;date_of_sampling&#39;, col_groupby],as_index=False).mean(numeric_only =True).sort_values(&#39;amount_detected&#39;, ascending=False)
+    
+    # group by col_groupby-&gt; mean
+    df2_grouped = df2_grouped_sample.groupby(col_groupby,as_index=False).mean(numeric_only =True)
+    
+    # group by col_groupby-&gt; count
+    df2_grouped_b = df2_grouped_sample.groupby(col_groupby, as_index=False).count().iloc[:,0:2]
+    
+    # merge the 2 new dfs and rename count column
+    df2_grouped= df2_grouped.merge(df2_grouped_b, left_on=col_groupby, right_on=col_groupby)
+    df2_grouped.rename(columns ={&#39;sample_id&#39;:&#39;number_of_tests&#39;},inplace=True)
+    
+    # sort dataframe by counts
+    df2_grouped= df2_grouped.sort_values(&#39;number_of_tests&#39;, ascending=False)
+
+    # reset index
+    df2_grouped.reset_index(inplace=True, drop=True)
+    df2_grouped_sample.reset_index(inplace=True, drop=True)
+
+    return df2_grouped, df2_grouped_sample
+
+df2_grouped, df2_grouped_sample = groupby_id_and_q(df2)
+df2_grouped
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country_of_origin</th>
+      <th>amount_detected</th>
+      <th>mrl</th>
+      <th>amount_pc</th>
+      <th>number_of_tests</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>UK</td>
+      <td>0.119058</td>
+      <td>1.136265</td>
+      <td>0.256603</td>
+      <td>1358</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Spain</td>
+      <td>0.077826</td>
+      <td>2.294524</td>
+      <td>0.380934</td>
+      <td>347</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>France</td>
+      <td>0.108354</td>
+      <td>1.071482</td>
+      <td>0.474971</td>
+      <td>95</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>South Africa</td>
+      <td>0.424217</td>
+      <td>3.561646</td>
+      <td>0.110971</td>
+      <td>94</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>India</td>
+      <td>0.151770</td>
+      <td>0.982138</td>
+      <td>0.310877</td>
+      <td>93</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>82</th>
+      <td>Pacific Ocean</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>83</th>
+      <td>Icelandic Waters</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>84</th>
+      <td>Ivory Coast (Cote d'Ivoire)</td>
+      <td>0.250000</td>
+      <td>1.300000</td>
+      <td>0.241667</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>85</th>
+      <td>Jersey (UK)</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>86</th>
+      <td>Alaska</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+<p>87 rows × 5 columns</p>
+</div></div></div>
+</div>
+</section>
+<section id="plot-functions">
+<h2>Plot functions<a class="headerlink" href="#plot-functions" title="Permalink to this headline">#</a></h2>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>column_names_dict={&#39;amount_detected&#39;:  &#39;Pesticide residues \nfound (mg/kg)&#39; ,
+                    &#39;mrl&#39;: &#39;Maximum reporting \nlimit MRL (mg/kg)&#39;, 
+                    &#39;amount_pc&#39; : &#39;Pesticide residues \nfraction of MRL&#39;}
+
+def range_plots(df2: pd.DataFrame, 
+                plot_type: str =&#39;boxplot&#39;, column_to_plot: str = &#39;amount_detected&#39;,                
+                cols_numeric: list=[], max_bin: list=[], bin_no: int = 30,
+                column_names_dict: dict =column_names_dict ) -&gt; plt.figure:
+    &quot;&quot;&quot;
+    Produces plots to show ranges in data
+    N.B. zeros are removed
+    https://seaborn.pydata.org/generated/seaborn.boxplot.html#seaborn.boxplot
+    change for violinplot
+    
+    Args:
+        df2 (pd.DataFrame): Pandas DataFrame. Pesticide data after grouping
+        plot_type (str): string of type of plot to do &#39;boxplot&#39; or &#39;hist&#39;
+        column_to_plot (str): which column to plot
+        cols_numeric (list[str]): list of column strings to plot (no input finds numeric columns)
+        max_bin (list[float]): list of floats (or ints) to gave max range for histogram (min = 0). 
+        bin_no (int): number of bins
+        column_names_dict (dict): dict of what to change column names to and from                        
+        
+    Raises:
+        ValueError: ??
+
+    Returns:
+        pyplot figures object of a boxplot or histogram
+    &quot;&quot;&quot;
+    
+    # if no input of cols_numeric finds from dtype=int or float
+    if not cols_numeric:
+        cols_numeric = [column for column in df2 if df2[column].dtype==&#39;float&#39; or df2[column].dtype==&#39;int&#39; ]
+    
+    # get just the cols_numeric columns
+    numeric_df = df2.loc[:,cols_numeric].copy()
+    numeric_df = numeric_df.loc[ numeric_df[column_to_plot]!=0]
+    
+    # rename columns
+    numeric_df = numeric_df.rename(columns = column_names_dict)
+
+    # different plot types
+    
+    if plot_type==&#39;boxplot&#39;:
+    
+        fig = plt.figure(figsize=(8,8))
+        sns.boxplot( data = numeric_df )
+        plt.yscale(&#39;log&#39;)
+    
+    elif plot_type==&#39;hist&#39;:
+        
+        n_cols = 3
+        n_rows = len(numeric_df.columns) // n_cols 
+
+        fig, ax = plt.subplots(nrows= n_rows, ncols= n_cols, sharex= False,
+                                    figsize= (12, 6))
+
+        if not max_bin:
+            max_bin = [5, 20, 1]
+            
+        for i,cols in enumerate(numeric_df):
+            data_col = numeric_df[cols]
+            counts, bins = np.histogram(data_col,
+                    range = [0, max_bin[i]], bins= bin_no)
+            ax[i].hist(bins[:-1], bins, weights=counts)
+            
+            # ax[i].set_yscale(&#39;log&#39;)
+            ax[i].set_title(cols)
+            if i==0:
+                ax[i].set_ylabel(&#39;Count&#39;)
+    
+    return fig
+
+range_plots(df2);
+range_plots(df2,plot_type=&#39;hist&#39;);
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Pesticide_Plots_10_0.png" src="_images/Pesticide_Plots_10_0.png" />
+<img alt="_images/Pesticide_Plots_10_1.png" src="_images/Pesticide_Plots_10_1.png" />
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def pie_plot(df_grouped_temp: pd.DataFrame, 
+             col_groupby : str = &#39;country_of_origin&#39;, col_plot: str =&#39;number_of_tests&#39;,
+             NUM_LABELS : int = 15, MIN_PCT : float = 2.) -&gt; plt.figure:
+    &quot;&quot;&quot;
+    Produces a pie plot from grouped data see groupby_id_country_chemical which does the grouping
+    
+
+    Args:
+        df_grouped_temp (pd.DataFrame): Pandas DataFrame. Pesticide data after grouping
+        col_groupby (str): which column has the names of the pie slices
+        col_plot (str): which column has the data
+        NUM_LABELS (int): max number of labels shown on the plot
+        MIN_PCT (float): min % to display text has to be more than
+        
+    Raises:
+        ValueError: ??
+
+    Returns:
+        pyplot figures object of a pie chart
+    &quot;&quot;&quot;
+    
+    maxed_out = False
+    
+    # what multiple of MIN_PCT have no decimal point
+    go_to_1dp = 2.
+    
+    df_grouped_temp = df_grouped_temp[[col_groupby, col_plot]].copy()
+    
+    df_grouped_temp = df_grouped_temp.sort_values(col_plot, ascending=False)
+    
+    if len(df_grouped_temp) &gt; NUM_LABELS:
+        df_grouped_temp[col_plot] = 100*df_grouped_temp[col_plot]/sum(df_grouped_temp[col_plot])
+
+        df_grouped_temp = df_grouped_temp.loc[df_grouped_temp[col_plot]&gt;MIN_PCT]
+
+        new_row = pd.Series({col_groupby: &#39;Other&#39;, 
+                             col_plot: 100-sum( df_grouped_temp[col_plot] )})
+
+        df_grouped_temp = pd.concat([df_grouped_temp, new_row.to_frame().T], ignore_index=True)
+        
+        maxed_out = True
+     
+    
+    labels=df_grouped_temp[col_groupby].copy()
+    colors = sns.color_palette(&#39;pastel&#39;)
+    len_colors = len(colors)
+    
+    # create colors of length of labels
+    for i in range(0, len(labels)//len_colors + 1):
+        colors= colors + colors
+    colors = colors[:len(labels)]
+    
+    # if there is an &#39;other&#39; make the other this color
+    if maxed_out:
+        colors[-1]=(.9,.9,.9)
+    
+    
+    fig=plt.figure(figsize=(7,7))
+    def func(pct, allvals):
+        absolute = int(np.round(pct/100.*np.sum(allvals)))
+        if pct&gt; MIN_PCT * go_to_1dp:
+            text_out = &quot;{:.1f}%&quot;.format(pct)
+        else:
+            text_out = &quot;{:.0f}%&quot;.format(pct)
+        return text_out
+
+    wedges, texts, autotexts =plt.pie(df_grouped_temp[col_plot],  
+            colors = colors, labels=labels,
+            autopct=lambda pct: func(pct, df_grouped_temp[col_plot]));
+    
+    col_plot = col_plot.replace(&#39;_&#39;,&#39; &#39;)
+    col_groupby = col_groupby.replace(&#39;_&#39;,&#39; &#39;)
+    plt.title(f&#39;The {col_plot} by {col_groupby}&#39;)
+
+    return fig
+
+pie_plot(df2_grouped,col_groupby=&#39;country_of_origin&#39; , col_plot=&#39;amount_detected&#39;);
+
+pie_plot(df2_grouped,col_groupby=&#39;country_of_origin&#39; , col_plot=&#39;number_of_tests&#39;);
+
+pie_plot(df2_grouped,col_groupby=&#39;country_of_origin&#39; , col_plot=&#39;amount_pc&#39;);
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Pesticide_Plots_11_0.png" src="_images/Pesticide_Plots_11_0.png" />
+<img alt="_images/Pesticide_Plots_11_1.png" src="_images/Pesticide_Plots_11_1.png" />
+<img alt="_images/Pesticide_Plots_11_2.png" src="_images/Pesticide_Plots_11_2.png" />
+</div>
+</div>
+</section>
+<section id="changes-with-time">
+<h2>Changes with time<a class="headerlink" href="#changes-with-time" title="Permalink to this headline">#</a></h2>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Return a named tuple object with three components: year, week and weekday
+# https://docs.python.org/3/library/datetime.html#datetime.date.isocalendar
+def get_week(x):
+    
+    return x.isocalendar()[1]
+
+
+xx=df2_grouped_sample.copy()
+xx[&#39;week&#39;] = df2_grouped_sample[&#39;date_of_sampling&#39;].apply(get_week)
+xx[&#39;month&#39;] = pd.DatetimeIndex(xx[&#39;date_of_sampling&#39;]).month
+xx2 = xx.groupby([&#39;month&#39;,&#39;week&#39;], as_index=False).sum()
+
+
+plt.plot(xx2[&#39;week&#39;], xx2[&#39;amount_pc&#39;],&#39;ok&#39;)
+
+# xx2
+
+xx3 = xx.groupby(&#39;month&#39;, as_index=False).sum()
+# xx3[&#39;week&#39;] = 
+xx3 = xx2.loc[:,[&#39;month&#39;,&#39;week&#39;,&#39;amount_pc&#39;]].groupby(&#39;month&#39;, as_index=False).mean()
+plt.plot(xx3[&#39;week&#39;], xx3[&#39;amount_pc&#39;],&#39;-o&#39;)
+xx3
+# xx3
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\44781\AppData\Local\Temp\ipykernel_17684\2100727419.py:11: FutureWarning: The default value of numeric_only in DataFrameGroupBy.sum is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
+  xx2 = xx.groupby([&#39;month&#39;,&#39;week&#39;], as_index=False).sum()
+C:\Users\44781\AppData\Local\Temp\ipykernel_17684\2100727419.py:18: FutureWarning: The default value of numeric_only in DataFrameGroupBy.sum is deprecated. In a future version, numeric_only will default to False. Either specify numeric_only or select only columns which should be valid for the function.
+  xx3 = xx.groupby(&#39;month&#39;, as_index=False).sum()
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>month</th>
+      <th>week</th>
+      <th>amount_pc</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>3.500000</td>
+      <td>2.086306</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>7.000000</td>
+      <td>7.833231</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>10.500000</td>
+      <td>2.774463</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>16.000000</td>
+      <td>19.927724</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>19.666667</td>
+      <td>10.779852</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>24.000000</td>
+      <td>23.025182</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7</td>
+      <td>27.333333</td>
+      <td>24.129023</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>8</td>
+      <td>32.500000</td>
+      <td>31.458573</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>9</td>
+      <td>37.000000</td>
+      <td>31.762303</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>10</td>
+      <td>42.000000</td>
+      <td>23.999908</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>11</td>
+      <td>46.000000</td>
+      <td>15.223698</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>12</td>
+      <td>48.500000</td>
+      <td>0.871350</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><img alt="_images/Pesticide_Plots_13_2.png" src="_images/Pesticide_Plots_13_2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># xx2 = xx.groupby(&#39;month&#39;, as_index=False).mean()
+# plt.plot(xx2[&#39;week&#39;], xx2[&#39;amount_pc&#39;],&#39;-o&#39;)
+
+# xx2
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="other-stuff">
+<h2>Other Stuff<a class="headerlink" href="#other-stuff" title="Permalink to this headline">#</a></h2>
+<p>Didn’t make the grade ideas</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+labels=df2_grouped[&#39;country_of_origin&#39;]
+colors = sns.color_palette(&#39;pastel&#39;)[0:len(labels)]
+fig=plt.figure(figsize=(7,7))
+def func(pct, allvals):
+    absolute = int(np.round(pct/100.*np.sum(allvals)))
+    if pct&gt;2.5:
+        text_out = &quot;{:.1f}%&quot;.format(pct)
+    else:
+        text_out=&#39;&#39;
+    return text_out
+
+wedges, texts, autotexts =plt.pie(df2_grouped[&#39;number_of_tests&#39;],  colors = colors,
+    autopct=lambda pct: func(pct, df2_grouped[&#39;number_of_tests&#39;]));
+
+# plt.legend(wedges[0:10], labels[0:10],
+#           title=&quot;Ingredients&quot;,
+#           loc=&quot;center left&quot;,
+#           bbox_to_anchor=(1, 0, 0.5, 1))
+
+bbox_props = dict(boxstyle=&quot;square,pad=0.3&quot;, fc=&quot;w&quot;, ec=&quot;k&quot;, lw=0.72)
+kw = dict(arrowprops=dict(arrowstyle=&quot;-&quot;),
+          bbox=bbox_props, zorder=0, va=&quot;center&quot;)
+
+for i, p in enumerate(wedges):
+    if i&lt;10:
+        ang = (p.theta2 - p.theta1)/2. + p.theta1
+        y = np.sin(np.deg2rad(ang))
+        x = np.cos(np.deg2rad(ang))
+        horizontalalignment = {-1: &quot;right&quot;, 1: &quot;left&quot;}[int(np.sign(x))]
+        connectionstyle = &quot;angle,angleA=0,angleB={}&quot;.format(ang)
+        kw[&quot;arrowprops&quot;].update({&quot;connectionstyle&quot;: connectionstyle})
+        plt.annotate(labels[i], xy=(x, y), xytext=(1.35*np.sign(x), 1.4*y),
+                    horizontalalignment=horizontalalignment, **kw)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Pesticide_Plots_17_0.png" src="_images/Pesticide_Plots_17_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def pie_plot_old(df_grouped_temp: pd.DataFrame, 
+             col_groupby : str = &#39;country_of_origin&#39;, col_plot : str =&#39;number_of_tests&#39;,
+             NUM_LABELS : int = 10, MIN_PCT : float = 2.5) -&gt; plt.figure:
+    &quot;&quot;&quot;
+    Produces a pie plot from grouped data see groupby_id_country_chemical which does the grouping
+    
+    Ideas: 
+        - below a certain % values go to &#39;other&#39;
+
+    Args:
+        df_grouped_temp (pd.DataFrame): Pandas DataFrame. Pesticide data after grouping
+        col_groupby (str): which column has the names of the pie slices
+        col_plot (str): which column has the data
+        NUM_LABELS (int): max number of labels shown on the plot
+        MIN_PCT (float): min % to display text has to be more than
+        
+    Raises:
+        ValueError: ??
+
+    Returns:
+        pyplot figures object of a pie chart
+    &quot;&quot;&quot;
+    
+    df_grouped_temp = df_grouped_temp.copy()
+    
+    df_grouped_temp = df_grouped_temp.sort_values(col_plot, ascending=False)
+    
+    
+    
+    labels=df_grouped_temp[col_groupby].copy()
+
+    if len(labels)&gt;NUM_LABELS:
+        labels[NUM_LABELS:]=&#39;&#39;
+        
+    colors = sns.color_palette(&#39;pastel&#39;)[0:len(labels)]
+    fig=plt.figure(figsize=(7,7))
+    def func(pct, allvals):
+        absolute = int(np.round(pct/100.*np.sum(allvals)))
+        if pct&gt; MIN_PCT:
+            text_out = &quot;{:.1f}%&quot;.format(pct)
+        else:
+            text_out=&#39;&#39;
+        return text_out
+
+    wedges, texts, autotexts =plt.pie(df_grouped_temp[col_plot],  
+            colors = colors, labels=labels,
+            autopct=lambda pct: func(pct, df_grouped_temp[col_plot]));
+    
+    col_plot = col_plot.replace(&#39;_&#39;,&#39; &#39;)
+    col_groupby = col_groupby.replace(&#39;_&#39;,&#39; &#39;)
+    plt.title(f&#39;The {col_plot} by {col_groupby}&#39;)
+
+    return fig
+
+pie_plot_old(df2_grouped,col_groupby=&#39;country_of_origin&#39; , col_plot=&#39;amount_detected&#39;);
+
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\44781\AppData\Local\Temp\ipykernel_17684\11647735.py:33: FutureWarning: The behavior of `series[i:j]` with an integer-dtype index is deprecated. In a future version, this will be treated as *label-based* indexing, consistent with e.g. `series[i]` lookups. To retain the old behavior, use `series.iloc[i:j]`. To get the future behavior, use `series.loc[i:j]`.
+  labels[NUM_LABELS:]=&#39;&#39;
+</pre></div>
+</div>
+<img alt="_images/Pesticide_Plots_18_1.png" src="_images/Pesticide_Plots_18_1.png" />
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "ons-env"
+        },
+        kernelOptions: {
+            kernelName: "ons-env",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ons-env'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Thomas Simm<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,56 @@
+Traceback (most recent call last):
+  File "c:\users\44781\documents\github\ons-env\lib\site-packages\jupyter_cache\executors\utils.py", line 51, in single_nb_execution
+    executenb(
+  File "c:\users\44781\documents\github\ons-env\lib\site-packages\nbclient\client.py", line 1265, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "c:\users\44781\documents\github\ons-env\lib\site-packages\jupyter_core\utils\__init__.py", line 160, in wrapped
+    return loop.run_until_complete(inner)
+  File "C:\Users\44781\anaconda3\lib\asyncio\base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "c:\users\44781\documents\github\ons-env\lib\site-packages\nbclient\client.py", line 703, in async_execute
+    await self.async_execute_cell(
+  File "c:\users\44781\documents\github\ons-env\lib\site-packages\nbclient\client.py", line 1021, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "c:\users\44781\documents\github\ons-env\lib\site-packages\nbclient\client.py", line 915, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+from src.data_loading.loads_from_url import *
+from src.data_cleaning.modify_dfs import *
+from src.data_visualisation.plot_funcs import *
+
+
+cwd = module_path
+
+folder_path = os.path.join(cwd,'data')
+file_path = []
+for x in os.listdir(folder_path):
+    file_path.append(os.path.join(folder_path,x) )
+
+# load data and clean    
+df = import_ods(file_path[2])
+
+df2 = modify_df(df)
+
+# needs to be added to modify
+df2['amount_pc']=df2['amount_detected']/df2['mrl']
+
+df2.loc[df2['amount_pc'].isna(),['amount_pc']]=0
+------------------
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Cell [1;32mIn[2], line 1[0m
+[1;32m----> 1[0m [38;5;28;01mfrom[39;00m [38;5;21;01msrc[39;00m[38;5;21;01m.[39;00m[38;5;21;01mdata_loading[39;00m[38;5;21;01m.[39;00m[38;5;21;01mloads_from_url[39;00m [38;5;28;01mimport[39;00m [38;5;241m*[39m
+[0;32m      2[0m [38;5;28;01mfrom[39;00m [38;5;21;01msrc[39;00m[38;5;21;01m.[39;00m[38;5;21;01mdata_cleaning[39;00m[38;5;21;01m.[39;00m[38;5;21;01mmodify_dfs[39;00m [38;5;28;01mimport[39;00m [38;5;241m*[39m
+[0;32m      3[0m [38;5;28;01mfrom[39;00m [38;5;21;01msrc[39;00m[38;5;21;01m.[39;00m[38;5;21;01mdata_visualisation[39;00m[38;5;21;01m.[39;00m[38;5;21;01mplot_funcs[39;00m [38;5;28;01mimport[39;00m [38;5;241m*[39m
+
+File [1;32m~\Documents\GitHub\Pesticide\src\data_loading\loads_from_url.py:2[0m
+[0;32m      1[0m [38;5;28;01mimport[39;00m [38;5;21;01mpandas[39;00m [38;5;28;01mas[39;00m [38;5;21;01mpd[39;00m
+[1;32m----> 2[0m [38;5;28;01mimport[39;00m [38;5;21;01mezodf[39;00m
+[0;32m      3[0m [38;5;28;01mimport[39;00m [38;5;21;01mre[39;00m
+[0;32m      5[0m [38;5;28;01mdef[39;00m [38;5;21mimport_ods[39m(fname):
+
+[1;31mModuleNotFoundError[0m: No module named 'ezodf'
+ModuleNotFoundError: No module named 'ezodf'
+
