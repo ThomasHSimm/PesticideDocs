@@ -4,6 +4,6 @@
 format: jb-book
 root: intro
 chapters:
-- file: markdown
+- file: Pesticide_Plots
+- file: using_jupyter_books
 - file: notebooks
-- file: markdown-notebooks

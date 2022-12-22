@@ -23,6 +23,8 @@
 # 
 # ``pip install --upgrade traitlets``
 # 
+# But it may make more sense to make a new virtual environment (see <a href="#create-a-virtual-environment">below</a>).
+# 
 # You can then create a new notebook folder (in the destination you are in) with:
 # 
 # ``jupyter-book create mynewbook/``
@@ -82,6 +84,42 @@ ax.scatter(*data, c=data[1], s=100*np.abs(data[0]));
 #     - `remove-input`
 #     - `remove-output`
 #     - `remove-cell`
+
+# ## Create a virtual environment
+# 
+# Some references:
+# - [Adding custom kernels to a jupyter notebook in visual studio](https://srinivas1996kumar.medium.com/adding-custom-kernels-to-a-jupyter-notebook-in-visual-studio-53e4d595208c)
+# - [Installing using pip and virtual environments](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/)
+# - [Managing virtual environment with pyenv](https://towardsdatascience.com/managing-virtual-environment-with-pyenv-ae6f3fb835f8)
+# - [Jupyter docs](https://docs.jupyter.org/en/latest/running.html)
+# - [Bisual studio Jupyter notebooks](https://code.visualstudio.com/docs/datascience/jupyter-notebooks)
+# 
+# In Windows I used Anaconda PowerShell. Go to folder where you want to install the virtual environment. May make sense to put them in the same place as any other ones (should be visible in visual code when a Python file is running or from Path), I use `anaconda3\envs`.
+# 
+# Create a new env called `new-env`:
+# 
+# `python -m venv new-env`
+# 
+# Activate it:
+# 
+# `.\new-env\Scripts\activate`
+# 
+# Once in the virtual env, can then install the packages needed:
+# 
+# ```
+# pip install jupyter
+# pip install ipykernel
+# ```
+# 
+# Then activate it:
+# 
+# `python -m ipykernel install --user --name new-env  --display-name "new-env"`
+# 
+# If you want to run Jupyter notebook run:
+# 
+# `jupyter notebook`
+
+# ## An interactive plot example
 
 # In[3]:
 

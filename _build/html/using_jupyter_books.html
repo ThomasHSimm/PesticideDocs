@@ -50,8 +50,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.jpg"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Content with notebooks" href="notebooks.html" />
+    <link rel="prev" title="Pesticide: Summary of the data" href="Pesticide_Plots.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -111,20 +114,20 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="markdown.html">
-   Markdown Files
+  <a class="reference internal" href="Pesticide_Plots.html">
+   Pesticide: Summary of the data
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Using Jupyter Books
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="notebooks.html">
    Content with notebooks
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="markdown-notebooks.html">
-   Notebooks with MyST Markdown
   </a>
  </li>
 </ul>
@@ -135,7 +138,7 @@ const thebe_selector_output = ".output, .cell_output"
              <!-- To handle the deprecated key -->
             
             <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a> <br>Home website <a href="https://thomashsimm.com/">thomashsimm.com</a>
             </div>
             
         </div>
@@ -221,51 +224,6 @@ title="Fullscreen mode"
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/ThomasHSimm/Pesticide"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/ThomasHSimm/Pesticide/issues/new?title=Issue%20on%20page%20%2Fusing_jupyter_books.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
 <div class="menu-dropdown menu-dropdown-download-buttons">
   <button class="headerbtn menu-dropdown__trigger"
       aria-label="Download this page">
@@ -350,6 +308,16 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-a-virtual-environment">
+   Create a virtual environment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#an-interactive-plot-example">
+   An interactive plot example
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -386,6 +354,16 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-a-virtual-environment">
+   Create a virtual environment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#an-interactive-plot-example">
+   An interactive plot example
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -406,6 +384,7 @@ title="Print to PDF"
 <p><code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">install</span> <span class="pre">-U</span> <span class="pre">jupyter-book</span></code></p>
 <p>I had an issue with traitlets on installation so I upgraded by:</p>
 <p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--upgrade</span> <span class="pre">traitlets</span></code></p>
+<p>But it may make more sense to make a new virtual environment (see <a href="#create-a-virtual-environment">below</a>).</p>
 <p>You can then create a new notebook folder (in the destination you are in) with:</p>
 <p><code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">create</span> <span class="pre">mynewbook/</span></code></p>
 <p>And build it with:</p>
@@ -470,6 +449,35 @@ ax.scatter(*data, c=data[1], s=100*np.abs(data[0]));
 </ul>
 </li>
 </ul>
+</section>
+</section>
+<section id="create-a-virtual-environment">
+<h2>Create a virtual environment<a class="headerlink" href="#create-a-virtual-environment" title="Permalink to this headline">#</a></h2>
+<p>Some references:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://srinivas1996kumar.medium.com/adding-custom-kernels-to-a-jupyter-notebook-in-visual-studio-53e4d595208c">Adding custom kernels to a jupyter notebook in visual studio</a></p></li>
+<li><p><a class="reference external" href="https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/">Installing using pip and virtual environments</a></p></li>
+<li><p><a class="reference external" href="https://towardsdatascience.com/managing-virtual-environment-with-pyenv-ae6f3fb835f8">Managing virtual environment with pyenv</a></p></li>
+<li><p><a class="reference external" href="https://docs.jupyter.org/en/latest/running.html">Jupyter docs</a></p></li>
+<li><p><a class="reference external" href="https://code.visualstudio.com/docs/datascience/jupyter-notebooks">Bisual studio Jupyter notebooks</a></p></li>
+</ul>
+<p>In Windows I used Anaconda PowerShell. Go to folder where you want to install the virtual environment. May make sense to put them in the same place as any other ones (should be visible in visual code when a Python file is running or from Path), I use <code class="docutils literal notranslate"><span class="pre">anaconda3\envs</span></code>.</p>
+<p>Create a new env called <code class="docutils literal notranslate"><span class="pre">new-env</span></code>:</p>
+<p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">new-env</span></code></p>
+<p>Activate it:</p>
+<p><code class="docutils literal notranslate"><span class="pre">.\new-env\Scripts\activate</span></code></p>
+<p>Once in the virtual env, can then install the packages needed:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">jupyter</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">ipykernel</span>
+</pre></div>
+</div>
+<p>Then activate it:</p>
+<p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">ipykernel</span> <span class="pre">install</span> <span class="pre">--user</span> <span class="pre">--name</span> <span class="pre">new-env</span>&#160; <span class="pre">--display-name</span> <span class="pre">&quot;new-env&quot;</span></code></p>
+<p>If you want to run Jupyter notebook run:</p>
+<p><code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code></p>
+</section>
+<section id="an-interactive-plot-example">
+<h2>An interactive plot example<a class="headerlink" href="#an-interactive-plot-example" title="Permalink to this headline">#</a></h2>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import altair as alt
@@ -554,13 +562,13 @@ budget_sizing = base.add_selection(
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-f82b0961cf1746a0a1d5387ad8209524"></div>
+<div id="altair-viz-6ef87e76bb444c418af2bfc235145cc1"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-f82b0961cf1746a0a1d5387ad8209524") {
-      outputDiv = document.getElementById("altair-viz-f82b0961cf1746a0a1d5387ad8209524");
+    if (outputDiv.id !== "altair-viz-6ef87e76bb444c418af2bfc235145cc1") {
+      outputDiv = document.getElementById("altair-viz-6ef87e76bb444c418af2bfc235145cc1");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -611,7 +619,6 @@ budget_sizing = base.add_selection(
 </div>
 </section>
 </section>
-</section>
 
     <script type="text/x-thebe-config">
     {
@@ -640,6 +647,20 @@ budget_sizing = base.add_selection(
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="Pesticide_Plots.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Pesticide: Summary of the data</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="notebooks.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Content with notebooks</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>
