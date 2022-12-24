@@ -1,0 +1,65 @@
+Traceback (most recent call last):
+  File "c:\users\44781\anaconda3\envs\ons-env\lib\site-packages\jupyter_cache\executors\utils.py", line 51, in single_nb_execution
+    executenb(
+  File "c:\users\44781\anaconda3\envs\ons-env\lib\site-packages\nbclient\client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "c:\users\44781\anaconda3\envs\ons-env\lib\site-packages\nbclient\util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "c:\users\44781\anaconda3\envs\ons-env\lib\site-packages\nbclient\util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "C:\Users\44781\anaconda3\lib\asyncio\base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "c:\users\44781\anaconda3\envs\ons-env\lib\site-packages\nbclient\client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "c:\users\44781\anaconda3\envs\ons-env\lib\site-packages\nbclient\client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "c:\users\44781\anaconda3\envs\ons-env\lib\site-packages\nbclient\client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+labels=df2_grouped['country_of_origin']
+colors = sns.color_palette('pastel')[0:len(labels)]
+fig=plt.figure(figsize=(7,7))
+def func(pct, allvals):
+    absolute = int(np.round(pct/100.*np.sum(allvals)))
+    if pct>2.5:
+        text_out = "{:.1f}%".format(pct)
+    else:
+        text_out=''
+    return text_out
+
+wedges, texts, autotexts =plt.pie(df2_grouped['number_of_tests'],  colors = colors,
+    autopct=lambda pct: func(pct, df2_grouped['number_of_tests']));
+
+# plt.legend(wedges[0:10], labels[0:10],
+#           title="Ingredients",
+#           loc="center left",
+#           bbox_to_anchor=(1, 0, 0.5, 1))
+
+bbox_props = dict(boxstyle="square,pad=0.3", fc="w", ec="k", lw=0.72)
+kw = dict(arrowprops=dict(arrowstyle="-"),
+          bbox=bbox_props, zorder=0, va="center")
+
+for i, p in enumerate(wedges):
+    if i<10:
+        ang = (p.theta2 - p.theta1)/2. + p.theta1
+        y = np.sin(np.deg2rad(ang))
+        x = np.cos(np.deg2rad(ang))
+        horizontalalignment = {-1: "right", 1: "left"}[int(np.sign(x))]
+        connectionstyle = "angle,angleA=0,angleB={}".format(ang)
+        kw["arrowprops"].update({"connectionstyle": connectionstyle})
+        plt.annotate(labels[i], xy=(x, y), xytext=(1.35*np.sign(x), 1.4*y),
+                    horizontalalignment=horizontalalignment, **kw)
+------------------
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mNameError[0m                                 Traceback (most recent call last)
+Cell [1;32mIn[1], line 1[0m
+[1;32m----> 1[0m labels[38;5;241m=[39m[43mdf2_grouped[49m[[38;5;124m'[39m[38;5;124mcountry_of_origin[39m[38;5;124m'[39m]
+[0;32m      2[0m colors [38;5;241m=[39m sns[38;5;241m.[39mcolor_palette([38;5;124m'[39m[38;5;124mpastel[39m[38;5;124m'[39m)[[38;5;241m0[39m:[38;5;28mlen[39m(labels)]
+[0;32m      3[0m fig[38;5;241m=[39mplt[38;5;241m.[39mfigure(figsize[38;5;241m=[39m([38;5;241m7[39m,[38;5;241m7[39m))
+
+[1;31mNameError[0m: name 'df2_grouped' is not defined
+NameError: name 'df2_grouped' is not defined
+
