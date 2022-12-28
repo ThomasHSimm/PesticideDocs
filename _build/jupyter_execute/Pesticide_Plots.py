@@ -72,13 +72,13 @@ df2['date_of_sampling'] = pd.to_datetime(df2['date_of_sampling'])
 df2
 
 
-# In[ ]:
-
-
-
-
-
 # In[4]:
+
+
+df2.to_csv('./_data/df2')
+
+
+# In[5]:
 
 
 df2.describe(include='all', datetime_is_numeric=True)
@@ -86,14 +86,14 @@ df2.describe(include='all', datetime_is_numeric=True)
 
 # ## Modify functions
 
-# In[5]:
+# In[6]:
 
 
 df2_grouped, df2_grouped_sample = groupby_id_and_q(df2)
 df2_grouped
 
 
-# In[6]:
+# In[7]:
 
 
 df2_grouped_sample.dtypes
@@ -103,7 +103,7 @@ df2_grouped_sample.dtypes
 
 # ## Plot functions
 
-# In[7]:
+# In[8]:
 
 
 range_plots(df2);
@@ -111,7 +111,7 @@ range_plots(df2,plot_type='hist');
 
 
 
-# In[8]:
+# In[9]:
 
 
 pie_plot(df2_grouped,col_groupby='country_of_origin' , col_plot='amount_detected');
@@ -125,13 +125,13 @@ pie_plot(df2_grouped,col_groupby='country_of_origin' , col_plot='amount_pc');
 # 
 # 
 
-# In[9]:
+# In[10]:
 
 
 df2
 
 
-# In[10]:
+# In[11]:
 
 
 # Return a named tuple object with three components: year, week and weekday
