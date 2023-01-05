@@ -5,5 +5,6 @@ format: jb-book
 root: intro
 chapters:
 - file: Pesticide_Plots
-- file: using_jupyter_books
+- file: References
 - file: UK_areas
+- file: using_jupyter_books
