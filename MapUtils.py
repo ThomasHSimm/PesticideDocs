@@ -38,6 +38,32 @@ wales_region_dict={
      'Monmouthshire':'South East Wales',    
      'Blaenau Gwent':'South East Wales',
     }
+
+def main():
+    """
+    Creates files:
+    - json file of UK areas and polygons
+    - a postcode mapper dataframe to convert postcode to area for plotting
+    These are saved locally
+    
+    """    
+    
+    # the kml polygon files to use to convert to json
+    url_data_paths = ['https://www.doogal.co.uk/kml/counties/Counties.kml',
+                  '.\\_data\\scotland_preg_2011.KML',
+                  '.\\_data\\WalesDistrict.kml',
+                  'https://www.doogal.co.uk/kml/UkPostcodes.kml']
+                  
+    country=['England', 'Scotland', 'Wales', 'Northern Ireland']
+    
+    # below the data above is used to create a json file and saved locally
+    url_KML_map(url_data_paths, 'combined_json', doScotWales=country)
+
+    # a mapper dataframe of postcode -> area is created anf then saved
+    postcode_df = load_pcode_csvs()
+    
+    postcode_df.to_csv(postcode_to_region.csv")
+    
     
 def load_kml(url_data):
     """
@@ -85,13 +111,13 @@ def url_KML_map(url_data_paths, json_fname, doScotWales=[False]):
     """
     The main function used to take a KML file and plot it 
         Calls kml_create_json to create json file
-        and plot_map to plot the map
+        
     
     Args: url_data (file path) the path to the kml file
           doScotWales (string) whether need to call split_islands on Scottish data
             or join on Wales data
     Returns: 
-        The folium map
+        Saves the json file
     
     """
     gdfAll = gpd.GeoDataFrame()
@@ -112,19 +138,6 @@ def url_KML_map(url_data_paths, json_fname, doScotWales=[False]):
     fname= json_fname +'.json'
     map_names, json_path = gdf_create_json(gdfAll, loc_save='./_data', fname=fname)
 
-    
-    # create a datafrme to check it all works
-    df = pd.DataFrame(columns=['County','Data'])
-      
-    # add the names of the regions
-    df['County'] = map_names
-    # create some random data to plot
-    df['Data']= np.random.randint(0 ,100,len(df) )
-
-    m = plot_map(df,what_to_plot='Data',region_to_plot='County',
-                json_path = json_path)
-    
-    return m, df
 
 def _split_islands(df):
     """
@@ -331,7 +344,6 @@ def plot_map(df,
     folium.features.GeoJsonTooltip(['Name'],labels=False)
     )
     
-
     return m
 
 def download_zip(url_data):
@@ -347,22 +359,3 @@ def download_zip(url_data):
     path_data = os.path.join(".\\_data", filepath)
     
     return path_data
-
-def get_df_zip(url_data):
-    url_data = download_zip(url_data)
-
-    fname=url_data.split('\\')[-1].split('.')[0]+'.json'
-    map_names, json_path = kml_create_json(url_data, fname=fname)
-
-    df = pd.DataFrame(columns=['County','Data'])
-    # add the names of the regions
-    df['County'] = map_names
-    # create some random data to plot
-    df['Data']= np.random.randint(0 ,100,len(df) )
-    
-    return df, json_path
-
-def url_to_map(url_data):
-    df, json_path = get_df_zip(url_data)
-    return plot_map(df,what_to_plot='Data',region_to_plot='County',
-                json_path = json_path)
