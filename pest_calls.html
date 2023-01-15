@@ -1,0 +1,1498 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Overview &#8212; Defra Pesticide Testing, Data Analysis</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.jpg"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/ONS-logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Defra Pesticide Testing, Data Analysis</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Defra Pesticide Testing, Data Analysis
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Pesticide_Plots.html">
+   Pesticide: Summary of the data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="References.html">
+   Pesticide - Resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="UK_areas.html">
+   Areas of UK for plotting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="using_jupyter_books.html">
+   Using Jupyter Books
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a> <br>Home website <a href="https://thomashsimm.com/">thomashsimm.com</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/ThomasHSimm/Pesticide/master?urlpath=tree/docs/pest_calls.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/pest_calls.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Overview
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ideas">
+   ideas:#
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#things-to-include-ths">
+     Things to include ths
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Overview</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Overview
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ideas">
+   ideas:#
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#things-to-include-ths">
+     Things to include ths
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import pandas as pd
+
+
+import sys
+sys.path.append(&quot;..&quot;)
+
+import src.data_loading.loads_from_url as lfu
+import src.data_cleaning.modify_dfs as mdf
+import src.data_visualisation.plot_funcs as pfs
+import src.data_cleaning.modify_dfs as md
+import src.utils.loads_from_url as utils
+
+import re
+import os
+from pandasql import sqldf
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">7</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">sys</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">7</span> <span class="kn">import</span> <span class="nn">src.data_loading.loads_from_url</span> <span class="k">as</span> <span class="nn">lfu</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="kn">import</span> <span class="nn">src.data_cleaning.modify_dfs</span> <span class="k">as</span> <span class="nn">mdf</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="kn">import</span> <span class="nn">src.data_visualisation.plot_funcs</span> <span class="k">as</span> <span class="nn">pfs</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;src&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>cwd = os.getcwd()
+cwd = re.split(r&quot;[A-Za-z]+$&quot;,cwd)[0]
+
+folder_path = os.path.join(cwd, &#39;data&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>all_dfs = lfu.import_all_ods(folder_path)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Importing 2016_annual_data
+Failed to load 2016_annual_data: Apple_SUM
+Failed to load 2016_annual_data: Apricots_SUM
+Failed to load 2016_annual_data: Beans_with_pods_SUM_
+Failed to load 2016_annual_data: Bread_SUM
+Failed to load 2016_annual_data: Breakfast_Cereal_SUM
+Failed to load 2016_annual_data: Cabbage_SUM
+Failed to load 2016_annual_data: Cashew_nuts_SUM
+Failed to load 2016_annual_data: Cheese_processed_SUM
+Failed to load 2016_annual_data: Cooked_meat_SUM
+Failed to load 2016_annual_data: Fish_predator_SUM
+Failed to load 2016_annual_data: Fish_sea_SUM
+Failed to load 2016_annual_data: Gluten-free_food_SUM
+Failed to load 2016_annual_data: Grapefruit_SUM
+Failed to load 2016_annual_data: Grapes_SUM
+Failed to load 2016_annual_data: Honey_SUM
+Failed to load 2016_annual_data: Infant_food_SUM
+Failed to load 2016_annual_data: Jam_SUM
+Failed to load 2016_annual_data: Leeks_SUM
+Failed to load 2016_annual_data: Lettuce_SUM
+Failed to load 2016_annual_data: Milk-SUM
+Failed to load 2016_annual_data: Non-dairy_milk_SUM
+Failed to load 2016_annual_data: Okra_SUM
+Failed to load 2016_annual_data: Pasta_SUM
+Failed to load 2016_annual_data: PeachesNectarines_SUM
+Failed to load 2016_annual_data: Pears_SUM
+Failed to load 2016_annual_data: Peppers_SUM
+Failed to load 2016_annual_data: Popcorn_SUM
+Failed to load 2016_annual_data: Pork_SUM
+Failed to load 2016_annual_data: Pork_proc_SUM
+Failed to load 2016_annual_data: Potatoes_SUM
+Failed to load 2016_annual_data: Prepfruit_SUM
+Failed to load 2016_annual_data: Rye_SUM
+Failed to load 2016_annual_data: Ryeflour_SUM
+Failed to load 2016_annual_data: Specialityveg_SUM
+Failed to load 2016_annual_data: Spices_SUM
+Failed to load 2016_annual_data: Springonions_SUM
+Failed to load 2016_annual_data: Strawberries_SUM
+Failed to load 2016_annual_data: Tomatoes_SUM
+Failed to load 2016_annual_data: TinTomatoes_SUM
+Failed to load 2016_annual_data: Wine_SUM
+Importing 2017_annual_data
+Failed to load 2017_annual_data: Apple_SUM
+Failed to load 2017_annual_data: Beans_SUM
+Failed to load 2017_annual_data: Beans(tinned)_SUM
+Failed to load 2017_annual_data: Bread_SUM
+Failed to load 2017_annual_data: Carrots_SUM
+Failed to load 2017_annual_data: Cauliflower_SUM
+Failed to load 2017_annual_data: Cheese(hard)_SUM
+Failed to load 2017_annual_data: Cherry_SUM
+Failed to load 2017_annual_data: Cucumber_SUM
+Failed to load 2017_annual_data: Fish(oily)_SUM
+Failed to load 2017_annual_data: Grapes_SUM
+Failed to load 2017_annual_data: InfantFormula_SUM
+Failed to load 2017_annual_data: KiwiFruit_SUM
+Failed to load 2017_annual_data: Lamb_SUM
+Failed to load 2017_annual_data: Lemon&amp;Limes_SUM
+Failed to load 2017_annual_data: Lettuce_SUM
+Failed to load 2017_annual_data: Milk_SUM
+Failed to load 2017_annual_data: Okra_SUM
+Failed to load 2017_annual_data: Onions_SUM
+Failed to load 2017_annual_data: Oranges_SUM
+Failed to load 2017_annual_data: Parsnip_SUM
+Failed to load 2017_annual_data: Pears_SUM
+Failed to load 2017_annual_data: Peppers_SUM
+Failed to load 2017_annual_data: Potato_SUM
+Failed to load 2017_annual_data: PoultryMeat_SUM
+Failed to load 2017_annual_data: Poultry(proc)_SUM
+Failed to load 2017_annual_data: PreparedFruit_SUM
+Failed to load 2017_annual_data: Raspberry_SUM
+Failed to load 2017_annual_data: Rice_SUM
+Failed to load 2017_annual_data: RyeFlour_SUM
+Failed to load 2017_annual_data: RyeGrain_SUM
+Failed to load 2017_annual_data: Shellfish_SUM
+Failed to load 2017_annual_data: SoyaMilk_SUM
+Failed to load 2017_annual_data: SoyaProd_SUM
+Failed to load 2017_annual_data: SpecBeans(dried)_SUM
+Failed to load 2017_annual_data: SpecFruit_SUM
+Failed to load 2017_annual_data: SprGreens&amp;Kale_SUM
+Failed to load 2017_annual_data: Yogurt_SUM
+Importing 2018_annual_data
+Importing Apr_2022_rolling_report_v2
+Failed to load Apr_2022_rolling_report_v2: Summary
+Importing August_2022_rolling_reports
+Failed to load August_2022_rolling_reports: Summary
+Importing July_2022_rolling_reports
+Failed to load July_2022_rolling_reports: Summary
+Importing June_2022_rolling_reports
+Failed to load June_2022_rolling_reports: Summary
+Importing May_2022_rolling_report
+Failed to load May_2022_rolling_report: Summary
+Importing October_2022_rolling_reports
+Failed to load October_2022_rolling_reports: Summary
+Importing Q1_2018_quarterly_data
+Failed to load Q1_2018_quarterly_data: Introduction
+Failed to load Q1_2018_quarterly_data: Apple_SUM
+Failed to load Q1_2018_quarterly_data: Aubergine_SUM
+Failed to load Q1_2018_quarterly_data: Banana_SUM
+Failed to load Q1_2018_quarterly_data: Beans_SUM
+Failed to load Q1_2018_quarterly_data: Beef_SUM
+Failed to load Q1_2018_quarterly_data: Broccoli_SUM
+Failed to load Q1_2018_quarterly_data: Eggs_SUM
+Failed to load Q1_2018_quarterly_data: Fish(white)_SUM
+Failed to load Q1_2018_quarterly_data: Frozen_Veg_SUM
+Failed to load Q1_2018_quarterly_data: Game_SUM
+Failed to load Q1_2018_quarterly_data: Grapefruit_SUM
+Failed to load Q1_2018_quarterly_data: Grapes_SUM
+Failed to load Q1_2018_quarterly_data: Lettuce_SUM
+Failed to load Q1_2018_quarterly_data: Melon_SUM
+Failed to load Q1_2018_quarterly_data: Milk_SUM
+Failed to load Q1_2018_quarterly_data: Mushroom_SUM
+Failed to load Q1_2018_quarterly_data: Okra_SUM
+Failed to load Q1_2018_quarterly_data: Pears_SUM
+Failed to load Q1_2018_quarterly_data: Peppers_SUM
+Failed to load Q1_2018_quarterly_data: Pineapple_SUM
+Failed to load Q1_2018_quarterly_data: Potato_SUM
+Importing Q1_2019_quarterly_data
+Failed to load Q1_2019_quarterly_data: Introduction
+Failed to load Q1_2019_quarterly_data: Apples_SUM
+Failed to load Q1_2019_quarterly_data: Beans_with_pods_SUM
+Failed to load Q1_2019_quarterly_data: Cabbage_SUM
+Failed to load Q1_2019_quarterly_data: Chillies_SUM
+Failed to load Q1_2019_quarterly_data: Cooked_meats_SUM
+Failed to load Q1_2019_quarterly_data: Fish_SUM
+Failed to load Q1_2019_quarterly_data: Grapes_SUM
+Failed to load Q1_2019_quarterly_data: Lemons_SUM
+Failed to load Q1_2019_quarterly_data: Lettuce_SUM
+Failed to load Q1_2019_quarterly_data: Milk_SUM
+Failed to load Q1_2019_quarterly_data: Okra_SUM
+Failed to load Q1_2019_quarterly_data: Peach_&amp;_Nectarines_SUM
+Failed to load Q1_2019_quarterly_data: Peppers_SUM
+Failed to load Q1_2019_quarterly_data: Pork_SUM
+Failed to load Q1_2019_quarterly_data: Potatoes_SUM
+Failed to load Q1_2019_quarterly_data: Rice_SUM
+Failed to load Q1_2019_quarterly_data: Shellfish_SUM
+Failed to load Q1_2019_quarterly_data: Spinach_SUM
+Failed to load Q1_2019_quarterly_data: Strawberries_SUM
+Failed to load Q1_2019_quarterly_data: Tomatoes_SUM
+Importing Q1_2020_quarterly_data
+Failed to load Q1_2020_quarterly_data: Introduction
+Failed to load Q1_2020_quarterly_data: Avocado_SUM
+Failed to load Q1_2020_quarterly_data: Beans_SUM
+Failed to load Q1_2020_quarterly_data: Carrots_SUM
+Failed to load Q1_2020_quarterly_data: Cauliflower_SUM
+Failed to load Q1_2020_quarterly_data: Fish(oily)_SUM
+Failed to load Q1_2020_quarterly_data: Grapes_SUM
+Failed to load Q1_2020_quarterly_data: Kiwi_SUM
+Failed to load Q1_2020_quarterly_data: Lamb_SUM
+Failed to load Q1_2020_quarterly_data: Lettuce_SUM
+Failed to load Q1_2020_quarterly_data: Liver_SUM
+Failed to load Q1_2020_quarterly_data: Mango_SUM
+Failed to load Q1_2020_quarterly_data: Milk_SUM
+Failed to load Q1_2020_quarterly_data: Okra_SUM
+Failed to load Q1_2020_quarterly_data: Onions_SUM
+Failed to load Q1_2020_quarterly_data: Oranges_SUM
+Failed to load Q1_2020_quarterly_data: Pate_SUM
+Failed to load Q1_2020_quarterly_data: Pears_SUM
+Failed to load Q1_2020_quarterly_data: Peas_SUM
+Failed to load Q1_2020_quarterly_data: Potato_SUM
+Failed to load Q1_2020_quarterly_data: Poultry_SUM
+Failed to load Q1_2020_quarterly_data: Rice_SUM
+Importing Q1_2021_quarterly_data
+Failed to load Q1_2021_quarterly_data: Summary
+Failed to load Q1_2021_quarterly_data: Aubergine_Q1_SUM
+Failed to load Q1_2021_quarterly_data: Banana_Q1_SUM
+Failed to load Q1_2021_quarterly_data: Beans_with_pods_Q1_SUM
+Failed to load Q1_2021_quarterly_data: Beef_Q1_SUM
+Failed to load Q1_2021_quarterly_data: Berries_and_small_fruits_Q1_SUM
+Failed to load Q1_2021_quarterly_data: Broccoli_Q1_SUM
+Failed to load Q1_2021_quarterly_data: Cheese_(Soft)_Q1_SUM
+Failed to load Q1_2021_quarterly_data: Eggs_Q1_SUM
+Failed to load Q1_2021_quarterly_data: Fish_(White)_Q1_NI_only_SUM
+Failed to load Q1_2021_quarterly_data: Grapes_Q1_SUM
+Failed to load Q1_2021_quarterly_data: Melon_Q1_SUM
+Failed to load Q1_2021_quarterly_data: Milk_Q1_SUM
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Failed to load Q1_2021_quarterly_data: Mushrooms_Q1_SUM
+Failed to load Q1_2021_quarterly_data: Peppers_Q1_SUM
+Failed to load Q1_2021_quarterly_data: Potatoes_Q1_SUM
+Failed to load Q1_2021_quarterly_data: Raspberries_Q1_SUM
+Failed to load Q1_2021_quarterly_data: Rice_Q1_SUM
+Importing Q2_2018_quarterly_data
+Failed to load Q2_2018_quarterly_data: Introduction
+Failed to load Q2_2018_quarterly_data: AnimalFats_SUM
+Failed to load Q2_2018_quarterly_data: Apple_SUM
+Failed to load Q2_2018_quarterly_data: Aubergine_SUM
+Failed to load Q2_2018_quarterly_data: Banana_SUM
+Failed to load Q2_2018_quarterly_data: Beans_SUM
+Failed to load Q2_2018_quarterly_data: Beef_SUM
+Failed to load Q2_2018_quarterly_data: Berries_SUM
+Failed to load Q2_2018_quarterly_data: Broccoli_SUM
+Failed to load Q2_2018_quarterly_data: CheeseSoft_SUM
+Failed to load Q2_2018_quarterly_data: ChineseCabbage_SUM
+Failed to load Q2_2018_quarterly_data: Cream_SUM
+Failed to load Q2_2018_quarterly_data: CurryLeaves_SUM
+Failed to load Q2_2018_quarterly_data: Eggs_SUM
+Failed to load Q2_2018_quarterly_data: FishWhite_SUM
+Failed to load Q2_2018_quarterly_data: Game_SUM
+Failed to load Q2_2018_quarterly_data: Grapefruit_SUM
+Failed to load Q2_2018_quarterly_data: Grapes_SUM
+Failed to load Q2_2018_quarterly_data: Lettuce_SUM
+Failed to load Q2_2018_quarterly_data: Melon_SUM
+Failed to load Q2_2018_quarterly_data: Milk_SUM
+Failed to load Q2_2018_quarterly_data: Mushrooms_SUM
+Failed to load Q2_2018_quarterly_data: MushroomSpeciality_SUM
+Failed to load Q2_2018_quarterly_data: Okra_SUM
+Failed to load Q2_2018_quarterly_data: Pears_SUM
+Failed to load Q2_2018_quarterly_data: Peas_SUM
+Failed to load Q2_2018_quarterly_data: Peppers_SUM
+Failed to load Q2_2018_quarterly_data: Pineapple_SUM
+Failed to load Q2_2018_quarterly_data: Potato_SUM
+Failed to load Q2_2018_quarterly_data: SoftCitrus_SUM
+Failed to load Q2_2018_quarterly_data: SpecVeg_SUM
+Importing Q2_2019_quarterly_data
+Failed to load Q2_2019_quarterly_data: Introduction
+Failed to load Q2_2019_quarterly_data: Apple_SUM
+Failed to load Q2_2019_quarterly_data: Barley_SUM
+Failed to load Q2_2019_quarterly_data: Beans_SUM
+Failed to load Q2_2019_quarterly_data: Butter_SUM
+Failed to load Q2_2019_quarterly_data: Cabbage_SUM
+Failed to load Q2_2019_quarterly_data: Cheese_SUM
+Failed to load Q2_2019_quarterly_data: Fish_SUM
+Failed to load Q2_2019_quarterly_data: Grapes_SUM
+Failed to load Q2_2019_quarterly_data: Honey_SUM
+Failed to load Q2_2019_quarterly_data: Lemons_SUM
+Failed to load Q2_2019_quarterly_data: Milk_SUM
+Failed to load Q2_2019_quarterly_data: Oats_SUM
+Failed to load Q2_2019_quarterly_data: Okra_SUM
+Failed to load Q2_2019_quarterly_data: Pasta_SUM
+Failed to load Q2_2019_quarterly_data: Peach&amp;Nect_SUM
+Failed to load Q2_2019_quarterly_data: Peppers_SUM
+Failed to load Q2_2019_quarterly_data: Plums_SUM
+Failed to load Q2_2019_quarterly_data: Potato_SUM
+Failed to load Q2_2019_quarterly_data: PrePacked_Salad_SUM
+Failed to load Q2_2019_quarterly_data: Shellfish_SUM
+Failed to load Q2_2019_quarterly_data: Spinach_SUM
+Failed to load Q2_2019_quarterly_data: Strawberry_SUM
+Failed to load Q2_2019_quarterly_data: Tomato_SUM
+Failed to load Q2_2019_quarterly_data: Wine_SUM
+Importing Q2_2021_quarterly_data
+Failed to load Q2_2021_quarterly_data: Summary
+Failed to load Q2_2021_quarterly_data: Asparagus_Q2_SUM
+Failed to load Q2_2021_quarterly_data: Aubergine_Q2_SUM
+Failed to load Q2_2021_quarterly_data: Banana_Q2_SUM
+Failed to load Q2_2021_quarterly_data: Beans_with_pods_Q2_SUM
+Failed to load Q2_2021_quarterly_data: Beef_Q2_SUM
+Failed to load Q2_2021_quarterly_data: Berries_and_small_fruits_Q2_SUM
+Failed to load Q2_2021_quarterly_data: Broccoli_Q2_SUM
+Failed to load Q2_2021_quarterly_data: Cheese_(Soft)_Q2_SUM
+Failed to load Q2_2021_quarterly_data: Eggs_GB_Only_Q2_SUM
+Failed to load Q2_2021_quarterly_data: Fish_(White)_Q2_NI_only_SUM
+Failed to load Q2_2021_quarterly_data: Grapefruit_Q2_SUM
+Failed to load Q2_2021_quarterly_data: Grapes_Q2_SUM
+Failed to load Q2_2021_quarterly_data: Melon_Q2_SUM
+Failed to load Q2_2021_quarterly_data: Milk_Q2_SUM
+Failed to load Q2_2021_quarterly_data: Mushrooms_Q2_SUM
+Failed to load Q2_2021_quarterly_data: Olive_Oil_Q2_SUM
+Failed to load Q2_2021_quarterly_data: Peppers_Q2_SUM
+Failed to load Q2_2021_quarterly_data: Potatoes_Q2_SUM
+Failed to load Q2_2021_quarterly_data: Raspberries_Q2_SUM
+Failed to load Q2_2021_quarterly_data: Spring_Greens_Q2_SUM
+Failed to load Q2_2021_quarterly_data: Wheat_Q2_SUM
+Importing Q2_Q3_2020_Data
+Failed to load Q2_Q3_2020_Data: Introduction
+Failed to load Q2_Q3_2020_Data: Avocado_SUM_
+Failed to load Q2_Q3_2020_Data: Beans_(Dried)_Q2_SUM
+Failed to load Q2_Q3_2020_Data: Bread_SUM
+Failed to load Q2_Q3_2020_Data: Carrots_SUM
+Failed to load Q2_Q3_2020_Data: Cauliflower_SUM
+Failed to load Q2_Q3_2020_Data: Courgette_SUM
+Failed to load Q2_Q3_2020_Data: Dried_Fruit_Q2_(Grapes)_SUM
+Failed to load Q2_Q3_2020_Data: Fish_(Oily)_SUM
+Failed to load Q2_Q3_2020_Data: Grapes_SUM
+Failed to load Q2_Q3_2020_Data: Herbs_SUM
+Failed to load Q2_Q3_2020_Data: Infant_Formula_Q2_SUM
+Failed to load Q2_Q3_2020_Data: Kiwi_Fruit_SUM
+Failed to load Q2_Q3_2020_Data: Lamb_SUM
+Failed to load Q2_Q3_2020_Data: Lettuce_SUM
+Failed to load Q2_Q3_2020_Data: Liver_SUM
+Failed to load Q2_Q3_2020_Data: Mango_SUM
+Failed to load Q2_Q3_2020_Data: Milk_SUM
+Failed to load Q2_Q3_2020_Data: Okra_SUM
+Failed to load Q2_Q3_2020_Data: Onions_SUM
+Failed to load Q2_Q3_2020_Data: Orange_Juice_SUM
+Failed to load Q2_Q3_2020_Data: Oranges_SUM
+Failed to load Q2_Q3_2020_Data: Pears_SUM
+Failed to load Q2_Q3_2020_Data: Peas_(without_pods)_SUM
+Failed to load Q2_Q3_2020_Data: Potatoes_Q2_&amp;_Q3_SUM
+Failed to load Q2_Q3_2020_Data: Poultry_(Meat)_SUM
+Failed to load Q2_Q3_2020_Data: Rice_Q2_SUM
+Failed to load Q2_Q3_2020_Data: Rye_SUM
+Failed to load Q2_Q3_2020_Data: Sweet_potatoes_SUM
+Importing Q3_2018_quarterly_data
+Failed to load Q3_2018_quarterly_data: Introduction
+Failed to load Q3_2018_quarterly_data: Apple_SUM
+Failed to load Q3_2018_quarterly_data: Aubergine_SUM
+Failed to load Q3_2018_quarterly_data: Banana_SUM
+Failed to load Q3_2018_quarterly_data: Beans_with_Pods_SUM
+Failed to load Q3_2018_quarterly_data: Beef_SUM
+Failed to load Q3_2018_quarterly_data: Berries_SUM
+Failed to load Q3_2018_quarterly_data: Bread_SUM
+Failed to load Q3_2018_quarterly_data: Broccoli_SUM
+Failed to load Q3_2018_quarterly_data: Cheese_(Soft)_SUM
+Failed to load Q3_2018_quarterly_data: Chinese_Cabbage_SUM
+Failed to load Q3_2018_quarterly_data: Eggs_SUM
+Failed to load Q3_2018_quarterly_data: Fish_(White)_SUM
+Failed to load Q3_2018_quarterly_data: Frozen_Fruits_SUM
+Failed to load Q3_2018_quarterly_data: Game_SUM
+Failed to load Q3_2018_quarterly_data: Ginger_SUM
+Failed to load Q3_2018_quarterly_data: Grapefruit_SUM
+Failed to load Q3_2018_quarterly_data: Grapes_SUM
+Failed to load Q3_2018_quarterly_data: Infant_Food_SUM
+Failed to load Q3_2018_quarterly_data: Lentils_SUM
+Failed to load Q3_2018_quarterly_data: Melon_SUM
+Failed to load Q3_2018_quarterly_data: Milk_SUM
+Failed to load Q3_2018_quarterly_data: Mushroom_SUM
+Failed to load Q3_2018_quarterly_data: Okra_SUM
+Failed to load Q3_2018_quarterly_data: Pears_SUM
+Failed to load Q3_2018_quarterly_data: Peppers_SUM
+Failed to load Q3_2018_quarterly_data: Pineapple_SUM
+Failed to load Q3_2018_quarterly_data: Potato_SUM
+Failed to load Q3_2018_quarterly_data: Soft_Citrus_SUM
+Failed to load Q3_2018_quarterly_data: Vine_Leaves_SUM
+Importing Q3_2019_quarterly_data
+Failed to load Q3_2019_quarterly_data: Introduction
+Failed to load Q3_2019_quarterly_data: Apple_SUM
+Failed to load Q3_2019_quarterly_data: Beans_SUM
+Failed to load Q3_2019_quarterly_data: Bread_SUM
+Failed to load Q3_2019_quarterly_data: Cabbage_SUM
+Failed to load Q3_2019_quarterly_data: Chocolate_SUM
+Failed to load Q3_2019_quarterly_data: CookedMeats_SUM
+Failed to load Q3_2019_quarterly_data: CurryLeaves_SUM
+Failed to load Q3_2019_quarterly_data: Fish_SUM
+Failed to load Q3_2019_quarterly_data: Grapes_SUM
+Failed to load Q3_2019_quarterly_data: InfantFood_SUM
+Failed to load Q3_2019_quarterly_data: Lemons_SUM
+Failed to load Q3_2019_quarterly_data: Lettuce_SUM
+Failed to load Q3_2019_quarterly_data: Milk_SUM
+Failed to load Q3_2019_quarterly_data: Okra_SUM
+Failed to load Q3_2019_quarterly_data: Pasta_SUM
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Failed to load Q3_2019_quarterly_data: Peach&amp;Nect_SUM
+Failed to load Q3_2019_quarterly_data: Peppers_SUM
+Failed to load Q3_2019_quarterly_data: Plums_SUM
+Failed to load Q3_2019_quarterly_data: PorkMeat_SUM
+Failed to load Q3_2019_quarterly_data: Potato_SUM
+Failed to load Q3_2019_quarterly_data: Potato(proc)_SUM
+Failed to load Q3_2019_quarterly_data: Spices(turmeric)_SUM
+Failed to load Q3_2019_quarterly_data: Spinach_SUM
+Failed to load Q3_2019_quarterly_data: Strawberry_SUM
+Importing Q3_2021_quarterly_data
+Failed to load Q3_2021_quarterly_data: Summary
+Failed to load Q3_2021_quarterly_data: Aubergine_GB_Q3_SUM
+Failed to load Q3_2021_quarterly_data: Aubergine_NI_Q3_SUM
+Failed to load Q3_2021_quarterly_data: Banana_GB_Q3_SUM
+Failed to load Q3_2021_quarterly_data: Banana_NI_Q3_SUM
+Failed to load Q3_2021_quarterly_data: Beans_GB_Q3_SUM
+Failed to load Q3_2021_quarterly_data: Beans_NI_Q3_SUM
+Failed to load Q3_2021_quarterly_data: Beef_GB_Q3_SUM
+Failed to load Q3_2021_quarterly_data: Beef_NI_Q3_SUM
+Failed to load Q3_2021_quarterly_data: Berries_Small_Fruit_GB_Q3_SUM
+Failed to load Q3_2021_quarterly_data: Berries_Small_Fruits_NI_Q3_SUM
+Failed to load Q3_2021_quarterly_data: Bread_Ordinary_GB-Q3_SUM
+Failed to load Q3_2021_quarterly_data: Bread_Ordinary_NI_Q3_SUM
+Failed to load Q3_2021_quarterly_data: Broccoli_GB_Q3_SUM
+Failed to load Q3_2021_quarterly_data: Broccoli_NI_Q3_SUM
+Failed to load Q3_2021_quarterly_data: Cheese_NI_Q3_SUM
+Failed to load Q3_2021_quarterly_data: Edible_Seeds_GB_Q3_SUM
+Failed to load Q3_2021_quarterly_data: Eggs_GB_Q3_SUM
+Failed to load Q3_2021_quarterly_data: Eggs_NI_Q3_SUM
+Failed to load Q3_2021_quarterly_data: Fish_(White)_Q3_NI_SUM
+Failed to load Q3_2021_quarterly_data: Grapefruit_GB_Q3_SUM
+Failed to load Q3_2021_quarterly_data: Grapefruit_NI_Q3_SUM
+Failed to load Q3_2021_quarterly_data: Grapes_GB_Q3_SUM
+Failed to load Q3_2021_quarterly_data: Grapes_NI_Q3_SUM
+Failed to load Q3_2021_quarterly_data: Melon_GB_Q3_SUM
+Failed to load Q3_2021_quarterly_data: Melon_NI_Q3_SUM
+Failed to load Q3_2021_quarterly_data: Milk_GB_Q3_SUM
+Failed to load Q3_2021_quarterly_data: Milk_NI-Q3_SUM
+Failed to load Q3_2021_quarterly_data: Mushrooms_GB_Q3_SUM
+Failed to load Q3_2021_quarterly_data: Mushroom_NI_Q3_SUM
+Failed to load Q3_2021_quarterly_data: Olive_Oil_GB_Q3_SUM
+Failed to load Q3_2021_quarterly_data: Olive_Oil_NI_Q3_SUM
+Failed to load Q3_2021_quarterly_data: Peppers_GB_Q3_SUM
+Failed to load Q3_2021_quarterly_data: Peppers_NI_Q3_SUM
+Failed to load Q3_2021_quarterly_data: Plant_Based_Protein_GB_Q3_SUM
+Failed to load Q3_2021_quarterly_data: Potatoes_GB_Q3_SUM
+Failed to load Q3_2021_quarterly_data: Potatoes_NI_Q3_SUM
+Failed to load Q3_2021_quarterly_data: Raspberries_GB_Q3_SUM
+Failed to load Q3_2021_quarterly_data: Raspberries_NI_Q3_SUM
+Failed to load Q3_2021_quarterly_data: Rice_GB_Q3_SUM
+Failed to load Q3_2021_quarterly_data: Rice_NI_Q3_SUM
+Failed to load Q3_2021_quarterly_data: Soya_Based_Drink_GB_Q3_SUM
+Failed to load Q3_2021_quarterly_data: Spring_Greens_GB_Q3_SUM
+Failed to load Q3_2021_quarterly_data: Spring_Greens_NI_Q3_SUM
+Importing Q4_2018_quarterly_data
+Failed to load Q4_2018_quarterly_data: Introduction
+Failed to load Q4_2018_quarterly_data: Animal_Fats_SUM
+Failed to load Q4_2018_quarterly_data: Apples_SUM
+Failed to load Q4_2018_quarterly_data: Aubergine_SUM
+Failed to load Q4_2018_quarterly_data: Banana_SUM
+Failed to load Q4_2018_quarterly_data: Beans_with_pods_SUM
+Failed to load Q4_2018_quarterly_data: Beef_SUM
+Failed to load Q4_2018_quarterly_data: Beer_SUM
+Failed to load Q4_2018_quarterly_data: Bread_SUM
+Failed to load Q4_2018_quarterly_data: Broccoli_SUM
+Failed to load Q4_2018_quarterly_data: Cheese_SUM
+Failed to load Q4_2018_quarterly_data: Eggs_SUM
+Failed to load Q4_2018_quarterly_data: Fish_SUM
+Failed to load Q4_2018_quarterly_data: Frozen_Fruits_SUM
+Failed to load Q4_2018_quarterly_data: Game_SUM
+Failed to load Q4_2018_quarterly_data: Ginger_SUM
+Failed to load Q4_2018_quarterly_data: Grapefruit_SUM
+Failed to load Q4_2018_quarterly_data: Grapes_SUM
+Failed to load Q4_2018_quarterly_data: Lettuce_SUM
+Failed to load Q4_2018_quarterly_data: Melon_SUM
+Failed to load Q4_2018_quarterly_data: Milk_SUM
+Failed to load Q4_2018_quarterly_data: Mushroom_SUM
+Failed to load Q4_2018_quarterly_data: Okra_SUM
+Failed to load Q4_2018_quarterly_data: Olive_oil_SUM
+Failed to load Q4_2018_quarterly_data: Pears_SUM
+Failed to load Q4_2018_quarterly_data: Peas_without_pods_SUM
+Failed to load Q4_2018_quarterly_data: Peppers_SUM
+Failed to load Q4_2018_quarterly_data: Pineapple_SUM
+Failed to load Q4_2018_quarterly_data: Potatoes_SUM
+Failed to load Q4_2018_quarterly_data: Soft_Citrus_SUM
+Failed to load Q4_2018_quarterly_data: Speciality_Vegetables_SUM
+Failed to load Q4_2018_quarterly_data: Wheat_SUM
+Importing Q4_2019_quarterly_data
+Failed to load Q4_2019_quarterly_data: Introduction
+Failed to load Q4_2019_quarterly_data: Apple_SUM
+Failed to load Q4_2019_quarterly_data: Barley_SUM
+Failed to load Q4_2019_quarterly_data: Beans_SUM
+Failed to load Q4_2019_quarterly_data: Bread(gluten_free)_SUM
+Failed to load Q4_2019_quarterly_data: Bread_SUM
+Failed to load Q4_2019_quarterly_data: Butter_SUM
+Failed to load Q4_2019_quarterly_data: Cheese_SUM
+Failed to load Q4_2019_quarterly_data: Chillies_SUM
+Failed to load Q4_2019_quarterly_data: Fish(sea)_SUM
+Failed to load Q4_2019_quarterly_data: Grapes_SUM
+Failed to load Q4_2019_quarterly_data: Honey_SUM
+Failed to load Q4_2019_quarterly_data: Lemon_SUM
+Failed to load Q4_2019_quarterly_data: Lettuce_SUM
+Failed to load Q4_2019_quarterly_data: Milk_SUM
+Failed to load Q4_2019_quarterly_data: Oats_SUM
+Failed to load Q4_2019_quarterly_data: Okra_SUM
+Failed to load Q4_2019_quarterly_data: Peach&amp;Nect_SUM
+Failed to load Q4_2019_quarterly_data: Pepper_SUM
+Failed to load Q4_2019_quarterly_data: Plums_SUM
+Failed to load Q4_2019_quarterly_data: Pork_SUM
+Failed to load Q4_2019_quarterly_data: Potato(proc)_SUM
+Failed to load Q4_2019_quarterly_data: Potatoes_SUM
+Failed to load Q4_2019_quarterly_data: PrePack_Salad_SUM
+Failed to load Q4_2019_quarterly_data: Rice_SUM
+Failed to load Q4_2019_quarterly_data: Shellfish_SUM
+Failed to load Q4_2019_quarterly_data: Spinach_SUM
+Failed to load Q4_2019_quarterly_data: Strawberry_SUM
+Failed to load Q4_2019_quarterly_data: Tomato_SUM
+Importing Q4_2020_Data
+Failed to load Q4_2020_Data: Introduction
+Failed to load Q4_2020_Data: Beans_with_Pods_Q4_(SUM)
+Failed to load Q4_2020_Data: Bread_Q4_(SUM)
+Failed to load Q4_2020_Data: Carrots_Q4_(SUM)
+Failed to load Q4_2020_Data: Cauliflower_Q4_(SUM)
+Failed to load Q4_2020_Data: Cheese_(Hard)_Q4_(SUM)
+Failed to load Q4_2020_Data: Courgette_Q4_(SUM)
+Failed to load Q4_2020_Data: Dried_Fruits_(Grapes)_Q4_(SUM)
+Failed to load Q4_2020_Data: Fish_(Oily)_Q4_(SUM)
+Failed to load Q4_2020_Data: Grapes_Q4_(SUM)
+Failed to load Q4_2020_Data: Kiwi_Fruit_Q4_(SUM)
+Failed to load Q4_2020_Data: Lamb_Q4_(SUM)
+Failed to load Q4_2020_Data: Liver_(Bovine)_Q4_(SUM)
+Failed to load Q4_2020_Data: Mango_Q4_(SUM)
+Failed to load Q4_2020_Data: Milk_Q4_(SUM)
+Failed to load Q4_2020_Data: Okra_Q4_(SUM)
+Failed to load Q4_2020_Data: Onions_Q4_(SUM)
+Failed to load Q4_2020_Data: Oranges_Q4_(SUM)
+Failed to load Q4_2020_Data: Pate_(Fish)_Q4_(SUM)
+Failed to load Q4_2020_Data: Pears_Q4_(SUM)
+Failed to load Q4_2020_Data: Peas_with_Pods_Q4_(SUM)
+Failed to load Q4_2020_Data: Potatoes_Q4_(SUM)
+Failed to load Q4_2020_Data: Poultry_Meat_Q4_(SUM)
+Failed to load Q4_2020_Data: Pumpkin_&amp;_Squash_Q4_(SUM)
+Failed to load Q4_2020_Data: Rye_Q4_(SUM)
+Failed to load Q4_2020_Data: Sweet_Potatoes_Q4_(SUM)
+Importing Q4_2021_PRIF_Quarterly_Report
+Failed to load Q4_2021_PRIF_Quarterly_Report: Summary
+Failed to load Q4_2021_PRIF_Quarterly_Report: Asparagus_GB_Q4_SUM
+Failed to load Q4_2021_PRIF_Quarterly_Report: Asparagus_NI_Q4_SUM
+Failed to load Q4_2021_PRIF_Quarterly_Report: Aubergine_GB_Q4_SUM
+Failed to load Q4_2021_PRIF_Quarterly_Report: Aubergine_NI_Q4_SUM
+Failed to load Q4_2021_PRIF_Quarterly_Report: Banana_GB_Q4_SUM
+Failed to load Q4_2021_PRIF_Quarterly_Report: Banana_NI_Q4_SUM
+Failed to load Q4_2021_PRIF_Quarterly_Report: Beans_GB_Q4_SUM
+Failed to load Q4_2021_PRIF_Quarterly_Report: Beans_NI_Q4_SUM
+Failed to load Q4_2021_PRIF_Quarterly_Report: Beef_GB_Q4_SUM
+Failed to load Q4_2021_PRIF_Quarterly_Report: Beef_NI_Q4_SUM
+Failed to load Q4_2021_PRIF_Quarterly_Report: Berries_Small_Fruit_GB_Q4_SUM
+Failed to load Q4_2021_PRIF_Quarterly_Report: Berries_Small_Fruits_NI_Q4_SUM
+Failed to load Q4_2021_PRIF_Quarterly_Report: Bread_GB_Q4_SUM
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Failed to load Q4_2021_PRIF_Quarterly_Report: Bread_NI_Q4_SUM
+Failed to load Q4_2021_PRIF_Quarterly_Report: Broccoli_GB_Q4_SUM
+Failed to load Q4_2021_PRIF_Quarterly_Report: Broccoli_NI_Q4_SUM
+Failed to load Q4_2021_PRIF_Quarterly_Report: Cheese_GB_Q4_SUM
+Failed to load Q4_2021_PRIF_Quarterly_Report: Cheese_NI_Q4_SUM
+Failed to load Q4_2021_PRIF_Quarterly_Report: Eggs_GB_Q4_SUM
+Failed to load Q4_2021_PRIF_Quarterly_Report: Eggs_NI_Q4_SUM
+Failed to load Q4_2021_PRIF_Quarterly_Report: Fish_(White)_Q4_NI_SUM
+Failed to load Q4_2021_PRIF_Quarterly_Report: Grapefruit_GB_Q4_SUM
+Failed to load Q4_2021_PRIF_Quarterly_Report: Grapefruit_NI_Q4_SUM
+Failed to load Q4_2021_PRIF_Quarterly_Report: Grapes_GB_Q4_SUM
+Failed to load Q4_2021_PRIF_Quarterly_Report: Grapes_NI_Q4_SUM
+Failed to load Q4_2021_PRIF_Quarterly_Report: Infant_Food_GB_Q4_SUM
+Failed to load Q4_2021_PRIF_Quarterly_Report: Infant_Food_NI_Q4_SUM
+Failed to load Q4_2021_PRIF_Quarterly_Report: Melon_GB_Q4_SUM
+Failed to load Q4_2021_PRIF_Quarterly_Report: Melon_NI_Q4_SUM
+Failed to load Q4_2021_PRIF_Quarterly_Report: Milk_GB_Q4_SUM
+Failed to load Q4_2021_PRIF_Quarterly_Report: Milk_NI_Q4_SUM
+Failed to load Q4_2021_PRIF_Quarterly_Report: Mushrooms_GB_Q4_SUM
+Failed to load Q4_2021_PRIF_Quarterly_Report: Mushrooms_NI_Q4_SUM
+Failed to load Q4_2021_PRIF_Quarterly_Report: Nuts_GB_Q4_SUM
+Failed to load Q4_2021_PRIF_Quarterly_Report: Olive_Oil_GB_Q4_SUM
+Failed to load Q4_2021_PRIF_Quarterly_Report: Olive_Oil_NI_Q4_SUM
+Failed to load Q4_2021_PRIF_Quarterly_Report: Pepper_Processed_GB_Q4_SUM
+Failed to load Q4_2021_PRIF_Quarterly_Report: Peppers_GB_Q4_SUM
+Failed to load Q4_2021_PRIF_Quarterly_Report: Peppers_NI_Q4_SUM
+Failed to load Q4_2021_PRIF_Quarterly_Report: Potatoes_GB_Q4_SUM
+Failed to load Q4_2021_PRIF_Quarterly_Report: Potatoes_NI_Q4_SUM
+Failed to load Q4_2021_PRIF_Quarterly_Report: Raspberries_GB_Q4_SUM
+Failed to load Q4_2021_PRIF_Quarterly_Report: Raspberries_NI_Q4_SUM
+Failed to load Q4_2021_PRIF_Quarterly_Report: Spring_Greens_GB_Q4_SUM
+Failed to load Q4_2021_PRIF_Quarterly_Report: Spring_Greens_NI_Q4_SUM
+Failed to load Q4_2021_PRIF_Quarterly_Report: Wheat_GB_Q4_SUM
+Failed to load Q4_2021_PRIF_Quarterly_Report: Wheat_NI_Q4_SUM
+Importing September_2022_rolling_reports
+Failed to load September_2022_rolling_reports: Summary
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>all_dfs
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Sample ID</th>
+      <th>Date of Sampling</th>
+      <th>Description</th>
+      <th>Country of Origin</th>
+      <th>Retail Outlet</th>
+      <th>Address</th>
+      <th>Brand Name</th>
+      <th>Packer / Manufacturer</th>
+      <th>Pesticide residues found in mg/kg (MRL)</th>
+      <th>product</th>
+      <th>Sampling Point</th>
+      <th>Packer / Manufacturer / Importer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Cooking</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>Apple_BNA</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1958/2016</td>
+      <td>2016-08-08T00:00:00</td>
+      <td>Bramley Apples</td>
+      <td>UK</td>
+      <td>Asda</td>
+      <td>Creechbarrow Road, Taunton TA1 2AN</td>
+      <td>Asda</td>
+      <td>Asda Stores Ltd Leeds, UK LS11 5AD</td>
+      <td>boscalid 0.03 (MRL = 2)</td>
+      <td>Apple_BNA</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1958/2016</td>
+      <td>2016-08-08T00:00:00</td>
+      <td>Bramley Apples</td>
+      <td>UK</td>
+      <td>Asda</td>
+      <td>Creechbarrow Road, Taunton TA1 2AN</td>
+      <td>Asda</td>
+      <td>Asda Stores Ltd Leeds, UK LS11 5AD</td>
+      <td>pyraclostrobin 0.01 (MRL = 0.5)</td>
+      <td>Apple_BNA</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0230/2016</td>
+      <td>2016-08-08T00:00:00</td>
+      <td>Bramley Apples</td>
+      <td>UK</td>
+      <td>Co-op</td>
+      <td>Northgate, Louth LN11 0LT</td>
+      <td>Co-op</td>
+      <td>Co-operative Group Ltd Manchester M60 0AG</td>
+      <td>boscalid 0.05 (MRL = 2)</td>
+      <td>Apple_BNA</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0230/2016</td>
+      <td>2016-08-08T00:00:00</td>
+      <td>Bramley Apples</td>
+      <td>UK</td>
+      <td>Co-op</td>
+      <td>Northgate, Louth LN11 0LT</td>
+      <td>Co-op</td>
+      <td>Co-operative Group Ltd Manchester M60 0AG</td>
+      <td>flonicamid (sum) 0.02 (MRL = 0.2)</td>
+      <td>Apple_BNA</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>0792/2022</td>
+      <td>2022-09-08T00:00:00</td>
+      <td>Marfona Unwashed Potatoes</td>
+      <td>UK</td>
+      <td>NaN</td>
+      <td>77 Havant Road, Hayling Island, Hampshire PO11...</td>
+      <td>None stated</td>
+      <td>NaN</td>
+      <td>maleic hydrazide 7.7 (MRL = 60)</td>
+      <td>Potatoes_(GB)</td>
+      <td>Stoke Fruit Farm</td>
+      <td>Stoke Fruit Farm 77 Havant Road, Hayling Islan...</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>0765/2022</td>
+      <td>2022-09-14T00:00:00</td>
+      <td>Sagitta Potatoes</td>
+      <td>UK</td>
+      <td>NaN</td>
+      <td>Callywith Gate Industrial Estate, Launceston R...</td>
+      <td>None stated</td>
+      <td>NaN</td>
+      <td>maleic hydrazide 17 (MRL = 60)</td>
+      <td>Potatoes_(GB)</td>
+      <td>Total Produce Ltd.</td>
+      <td>CS Duston &amp; Son Colwith Farm, Par, Cornwall</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>0938/2022</td>
+      <td>2022-09-01T00:00:00</td>
+      <td>Marfona Ware Potatoes</td>
+      <td>UK</td>
+      <td>NaN</td>
+      <td>Fengate, Moulton Chapel PE12 0XL</td>
+      <td>None stated</td>
+      <td>NaN</td>
+      <td>None were detected above the set RL</td>
+      <td>Potatoes_(GB)</td>
+      <td>Tulipland Potatoes Ltd</td>
+      <td>Garden of Elveden</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>0833/2022</td>
+      <td>2022-08-31T00:00:00</td>
+      <td>Lady Rosetta</td>
+      <td>England (UK)</td>
+      <td>NaN</td>
+      <td>Tyrrells Court, Stretford Bridge, Leominster H...</td>
+      <td>None stated</td>
+      <td>NaN</td>
+      <td>None were detected above the set RL</td>
+      <td>Potatoes_(GB)</td>
+      <td>Tyrrells Crisps</td>
+      <td>KP Crisps</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>0833/2022</td>
+      <td>2022-08-31T00:00:00</td>
+      <td>Lady Rosetta</td>
+      <td>England (UK)</td>
+      <td>NaN</td>
+      <td>Tyrrells Court, Stretford Bridge, Leominster H...</td>
+      <td>None stated</td>
+      <td>NaN</td>
+      <td>None were detected above the set RL</td>
+      <td>Potatoes_(GB)</td>
+      <td>Tyrrells Crisps</td>
+      <td>KP Crisps</td>
+    </tr>
+  </tbody>
+</table>
+<p>41997 rows × 12 columns</p>
+</div></div></div>
+</div>
+<section id="overview">
+<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h1>
+<p>Types of analysis:#</p>
+<ol class="simple">
+<li><p>Summary of each product (apples or aubergines),</p>
+<ul class="simple">
+<li><p>grouped by country of origin#</p></li>
+<li><p>under each Country group, results grouped by detected chemicals (DC)#</p></li>
+<li><p>for each DC, show the count of products with some detected and the range they were in#</p></li>
+<li><p>for each DC, show the count of products with none-detected#</p></li>
+</ul>
+</li>
+<li><p>Counts of product items grouped by country of origin,</p>
+<ul class="simple">
+<li><p>e.g “Apples from USA = 6, Apples from France = 3 “#</p></li>
+</ul>
+</li>
+<li><p>Distribution of DCs grouped by country of origin,</p>
+<ul class="simple">
+<li><p>e.g. boscalid : UK = 2, USA = 5.#</p></li>
+</ul>
+</li>
+<li><p>Statement of Count Range of DCs found in how many of total number of samples,</p>
+<ul class="simple">
+<li><p>e.g. “Residues (ranging from 1 to 11) were detected in 12 of 24 of the samples analysed”#</p></li>
+</ul>
+</li>
+<li><p>A table showing number of residues, sample ID, Type of apple, amounts of each DC (and a ‘-’ if n/a) and the country of origin#</p></li>
+<li><p>total list of chemicals analysed for but not found.</p></li>
+</ol>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="ideas">
+<h1>ideas:#<a class="headerlink" href="#ideas" title="Permalink to this headline">#</a></h1>
+<ol class="simple">
+<li><p>for each product, show pie chart of prods with none detected, one detected, multiple detected#</p></li>
+<li><p>same as above,</p>
+<ul class="simple">
+<li><p>but filter by supermarket.#</p></li>
+<li><p>2b) same as above but filter by country of origin#</p></li>
+<li><p>2c) same as above but show breakdown#</p></li>
+</ul>
+</li>
+<li><p>scattergraph of amounts detected across product category, compared to MRLs (either individual DCs or agregated)#</p></li>
+<li><p>Stacked bargraph showing total amount detected per sample, with a different colour to represent each DC.#</p></li>
+<li><p>some kind of graph to represent the chemicals that were not detected!</p></li>
+</ol>
+<section id="things-to-include-ths">
+<h2>Things to include ths<a class="headerlink" href="#things-to-include-ths" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>date as date time or seperated to year, month, day</p></li>
+<li><p>check works with other files from url</p></li>
+<li><p>use bs from different pc?</p>
+<ul>
+<li><p>sort bs code out</p></li>
+</ul>
+</li>
+<li><p>build basic as streamlit</p></li>
+<li><p>unittests</p></li>
+<li><p>postcode to map</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># dfAll=[]
+# for file in file_path:
+#     print(file.split(&#39;\\&#39;)[-1])
+#     df = import_ods(file)
+#     print(df.columns)
+#     dfAll.append(df)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># 
+# df2
+
+# dfAll[1]
+ii=0
+print(file_path[ii])
+df = import_ods(file_path[ii])
+
+df2 = modify_df(df)
+
+df2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># df2.loc[df2[&#39;product&#39;]==&quot;Wine&quot;]
+pd.DatetimeIndex(df2[&#39;date_of_sampling&#39;]).year
+pd.DatetimeIndex(df2[&#39;date_of_sampling&#39;]).month
+
+df2[&#39;date_of_sampling&#39;].dt.day
+
+
+def plot_time(group_how=&#39;count&#39;):
+    if group_how==&#39;count&#39;:
+        df3 = df2.groupby(pd.DatetimeIndex(df2[&#39;date_of_sampling&#39;]).month).count()
+        plt.plot(df3.index, df3[&#39;amount_detected&#39;],&#39;ok-&#39;)
+    else:
+        df3 = df2.groupby(pd.DatetimeIndex(df2[&#39;date_of_sampling&#39;]).month).mean()
+        plt.plot(df3.index, df3[group_how],&#39;ok-&#39;)
+    # print(df3)
+plot_time(&#39;mrl&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>max(pd.DatetimeIndex(df2[&#39;date_of_sampling&#39;]).month)
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="simple">
+<li><p>Summary of each product (apples or aubergines),</p>
+<ul class="simple">
+<li><p>grouped by country of origin#</p></li>
+<li><p>under each Country group, results grouped by detected chemicals (DC)#</p></li>
+<li><p>for each DC, show the count of products with some detected and the range they were in#</p></li>
+<li><p>for each DC, show the count of products with none-detected#</p></li>
+</ul>
+</li>
+<li><p>Counts of product items grouped by country of origin,</p>
+<ul class="simple">
+<li><p>e.g “Apples from USA = 6, Apples from France = 3 “#</p></li>
+</ul>
+</li>
+<li><p>Distribution of DCs grouped by country of origin,</p>
+<ul class="simple">
+<li><p>e.g. boscalid : UK = 2, USA = 5.#</p></li>
+</ul>
+</li>
+<li><p>Statement of Count Range of DCs found in how many of total number of samples,</p>
+<ul class="simple">
+<li><p>e.g. “Residues (ranging from 1 to 11) were detected in 12 of 24 of the samples analysed”#</p></li>
+</ul>
+</li>
+<li><p>A table showing number of residues, sample ID, Type of apple, amounts of each DC (and a ‘-’ if n/a) and the country of origin#</p></li>
+<li><p>total list of chemicals analysed for but not found.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>product = &#39;Wine&#39;
+date_low = &#39;2016-06-01&#39;
+date_high = &#39;2017-06-01&#39;
+data_sql = sqldf(f&quot;&quot;&quot;
+SELECT 
+    chem_name,	SUM(amount_detected) AS sum_detected, 
+    country_of_origin, COUNT(*) as count_tests
+FROM 
+    df2
+WHERE 
+    product =  &#39;{product}&#39; AND
+    date_of_sampling &gt; &#39;{date_low}&#39; AND
+    date_of_sampling &lt; &#39;{date_high}&#39; 
+    
+GROUP BY
+    country_of_origin, chem_name
+&quot;&quot;&quot;, locals()
+)
+
+data_sql
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>&quot;&quot;&quot;
+SELECT 
+    chem_name,	SUM(amount_detected) AS sum_detected, 
+    country_of_origin, COUNT(*) as count_tests
+FROM 
+    df2
+WHERE 
+    product =  &#39;{}&#39; AND
+    date_of_sampling &gt; &#39;2016-06-01&#39; 
+GROUP BY
+    country_of_origin, chem_name
+&quot;&quot;&quot;.format(product)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>data = data_sql#.loc[:,&#39;sum_detected&#39;]
+data.groupby(&#39;chem_name&#39;,as_index=False).sum()
+# data
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+
+
+def plot_pie_by_chem(data_sql, country=&#39;USA&#39;, what_to_plot=&#39;sum_detected&#39;):
+
+    if country ==&#39;all&#39;:
+        data_sql = data_sql.groupby(&#39;chem_name&#39;,as_index=False).sum()
+        data = data_sql.loc[:,what_to_plot]
+        labels = data_sql.loc[:,&#39;chem_name&#39;]
+    
+    else:
+        data = data_sql.loc[data_sql[&#39;country_of_origin&#39;]==country,what_to_plot]
+        labels = data_sql.loc[data_sql[&#39;country_of_origin&#39;]==country,&#39;chem_name&#39;]
+    #define Seaborn color palette to use
+    colors = sns.color_palette(&#39;pastel&#39;)[0:len(labels)]
+
+    plt.pie(data, labels=labels, colors = colors,
+        autopct=&#39;%.0f%%&#39;, normalize=True);
+    plt.title(what_to_plot + &#39; from country = &#39; + country  )
+
+
+
+
+def plot_pie_by_chem2(data_sql, chemical_country=&#39;boscalid&#39;, what_to_plot=&#39;sum_detected&#39;,is_country=True):
+
+    if is_country:
+        label_plot =&#39;country_of_origin&#39;
+        title_str = what_to_plot + &#39; by chemical = &#39; + chemical_country
+        selective = &#39;chem_name&#39;
+    else:
+        label_plot = &#39;chem_name&#39;
+        title_str = what_to_plot + &#39; from country = &#39; + chemical_country
+        selective = &#39;country_of_origin&#39;
+
+    if chemical_country ==&#39;all&#39;:
+        data_sql = data_sql.groupby(label_plot,as_index=False).sum()
+        data = data_sql.loc[:,what_to_plot]
+        labels = data_sql.loc[:,label_plot]
+    
+    else:
+        data = data_sql.loc[data_sql[selective]==chemical_country,what_to_plot]
+        labels = data_sql.loc[data_sql[selective]==chemical_country,label_plot]
+    
+    #define Seaborn color palette to use
+    colors = sns.color_palette(&#39;pastel&#39;)[0:len(labels)]
+
+    plt.pie(data, labels=labels, colors = colors,
+        autopct=&#39;%.0f%%&#39;, normalize=True);
+    plt.title( title_str  )
+
+# plot_pie_by_chem(data_sql,&#39;USA&#39;,&#39;sum_detected&#39;),
+plot_pie_by_chem2(data_sql,&#39;all&#39;,&#39;sum_detected&#39;,False)
+# data_sql
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import seaborn as sns
+import matplotlib.pyplot as plt
+
+data = data_sql.loc[data_sql[&#39;chem_name&#39;]==&#39;boscalid&#39;,&#39;sum_detected&#39;]
+labels = data_sql.loc[data_sql[&#39;chem_name&#39;]==&#39;boscalid&#39;,&#39;country_of_origin&#39;]
+#define Seaborn color palette to use
+colors = sns.color_palette(&#39;pastel&#39;)[0:len(labels)]
+
+plt.pie(data, labels=labels, colors = colors,
+    autopct=&#39;%.0f%%&#39;, normalize=True);
+
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Thomas Simm<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

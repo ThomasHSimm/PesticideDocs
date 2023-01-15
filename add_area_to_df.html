@@ -1,0 +1,1571 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Converting postcode to area &#8212; Defra Pesticide Testing, Data Analysis</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.jpg"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/ONS-logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Defra Pesticide Testing, Data Analysis</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Defra Pesticide Testing, Data Analysis
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Pesticide_Plots.html">
+   Pesticide: Summary of the data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="References.html">
+   Pesticide - Resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="UK_areas.html">
+   Areas of UK for plotting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="using_jupyter_books.html">
+   Using Jupyter Books
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a> <br>Home website <a href="https://thomashsimm.com/">thomashsimm.com</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/ThomasHSimm/Pesticide/master?urlpath=tree/docs/add_area_to_df.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/add_area_to_df.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#imports">
+   Imports
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#load-the-poscode-data">
+   Load the poscode data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#convert-the-postcode-to-area">
+   Convert the postcode to area
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reduce-the-length-of-the-postcode">
+   Reduce the length of the postcode
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#it-works-but-a-tad-convoluted">
+     It works but a tad convoluted
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#update-postcode-data">
+   Update postcode data
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Converting postcode to area</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#imports">
+   Imports
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#load-the-poscode-data">
+   Load the poscode data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#convert-the-postcode-to-area">
+   Convert the postcode to area
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reduce-the-length-of-the-postcode">
+   Reduce the length of the postcode
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#it-works-but-a-tad-convoluted">
+     It works but a tad convoluted
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#update-postcode-data">
+   Update postcode data
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="converting-postcode-to-area">
+<h1>Converting postcode to area<a class="headerlink" href="#converting-postcode-to-area" title="Permalink to this headline">#</a></h1>
+<section id="imports">
+<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this headline">#</a></h2>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import os
+import pandas as pd
+import copy
+
+import src.utils.map_utils as mpu
+
+data_file = os.path.join(MAIN_PATH, &#39;src&#39;,&#39;utils&#39;, &#39;map_data&#39;,&#39;combined_data.csv&#39;)
+df = pd.read_csv(data_file,index_col=0)
+df
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sample_id</th>
+      <th>date_of_sampling</th>
+      <th>description</th>
+      <th>country_of_origin</th>
+      <th>retail_outlet</th>
+      <th>address</th>
+      <th>brand_name</th>
+      <th>packer_/_manufacturer_/_importer</th>
+      <th>pesticide_residues_found_in_mg/kg_(mrl)</th>
+      <th>product</th>
+      <th>address_postcode</th>
+      <th>packer__postcode</th>
+      <th>chem_name</th>
+      <th>amount_detected</th>
+      <th>mrl</th>
+      <th>amount_pc</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1958/2016</td>
+      <td>2016-08-08</td>
+      <td>Bramley Apples</td>
+      <td>UK</td>
+      <td>Asda</td>
+      <td>Creechbarrow Road, Taunton TA1 2AN</td>
+      <td>Asda</td>
+      <td>Asda Stores Ltd Leeds, UK LS11 5AD</td>
+      <td>boscalid 0.03 (MRL = 2)</td>
+      <td>Apple</td>
+      <td>TA1 2AN</td>
+      <td>LS11 5AD</td>
+      <td>boscalid</td>
+      <td>0.03</td>
+      <td>2.0</td>
+      <td>0.015000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1958/2016</td>
+      <td>2016-08-08</td>
+      <td>Bramley Apples</td>
+      <td>UK</td>
+      <td>Asda</td>
+      <td>Creechbarrow Road, Taunton TA1 2AN</td>
+      <td>Asda</td>
+      <td>Asda Stores Ltd Leeds, UK LS11 5AD</td>
+      <td>pyraclostrobin 0.01 (MRL = 0.5)</td>
+      <td>Apple</td>
+      <td>TA1 2AN</td>
+      <td>LS11 5AD</td>
+      <td>pyraclostrobin</td>
+      <td>0.01</td>
+      <td>0.5</td>
+      <td>0.020000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0230/2016</td>
+      <td>2016-08-08</td>
+      <td>Bramley Apples</td>
+      <td>UK</td>
+      <td>Co-op</td>
+      <td>Northgate, Louth LN11 0LT</td>
+      <td>Co-op</td>
+      <td>Co-operative Group Ltd Manchester M60 0AG</td>
+      <td>boscalid 0.05 (MRL = 2)</td>
+      <td>Apple</td>
+      <td>LN11 0LT</td>
+      <td>M60 0AG</td>
+      <td>boscalid</td>
+      <td>0.05</td>
+      <td>2.0</td>
+      <td>0.025000</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0230/2016</td>
+      <td>2016-08-08</td>
+      <td>Bramley Apples</td>
+      <td>UK</td>
+      <td>Co-op</td>
+      <td>Northgate, Louth LN11 0LT</td>
+      <td>Co-op</td>
+      <td>Co-operative Group Ltd Manchester M60 0AG</td>
+      <td>flonicamid (sum) 0.02 (MRL = 0.2)</td>
+      <td>Apple</td>
+      <td>LN11 0LT</td>
+      <td>M60 0AG</td>
+      <td>flonicamid (sum)</td>
+      <td>0.02</td>
+      <td>0.2</td>
+      <td>0.100000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0230/2016</td>
+      <td>2016-08-08</td>
+      <td>Bramley Apples</td>
+      <td>UK</td>
+      <td>Co-op</td>
+      <td>Northgate, Louth LN11 0LT</td>
+      <td>Co-op</td>
+      <td>Co-operative Group Ltd Manchester M60 0AG</td>
+      <td>pyraclostrobin 0.03 (MRL = 0.5)</td>
+      <td>Apple</td>
+      <td>LN11 0LT</td>
+      <td>M60 0AG</td>
+      <td>pyraclostrobin</td>
+      <td>0.03</td>
+      <td>0.5</td>
+      <td>0.060000</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>23947</th>
+      <td>0792/2022</td>
+      <td>2022-09-08</td>
+      <td>Marfona Unwashed Potatoes</td>
+      <td>UK</td>
+      <td>Stoke Fruit Farm</td>
+      <td>77 Havant Road, Hayling Island, Hampshire PO11...</td>
+      <td>None stated</td>
+      <td>Stoke Fruit Farm 77 Havant Road, Hayling Islan...</td>
+      <td>maleic hydrazide 7.7 (MRL = 60)</td>
+      <td>Potatoes_(GB)</td>
+      <td>PO11 0PT</td>
+      <td>PO11 0PT</td>
+      <td>maleic hydrazide</td>
+      <td>7.70</td>
+      <td>60.0</td>
+      <td>0.128333</td>
+    </tr>
+    <tr>
+      <th>23948</th>
+      <td>0765/2022</td>
+      <td>2022-09-14</td>
+      <td>Sagitta Potatoes</td>
+      <td>UK</td>
+      <td>Total Produce Ltd.</td>
+      <td>Callywith Gate Industrial Estate, Launceston R...</td>
+      <td>None stated</td>
+      <td>CS Duston &amp; Son Colwith Farm, Par, Cornwall</td>
+      <td>maleic hydrazide 17 (MRL = 60)</td>
+      <td>Potatoes_(GB)</td>
+      <td>PL31 2RQ</td>
+      <td>0</td>
+      <td>maleic hydrazide</td>
+      <td>17.00</td>
+      <td>60.0</td>
+      <td>0.283333</td>
+    </tr>
+    <tr>
+      <th>23949</th>
+      <td>0938/2022</td>
+      <td>2022-09-01</td>
+      <td>Marfona Ware Potatoes</td>
+      <td>UK</td>
+      <td>Tulipland Potatoes Ltd</td>
+      <td>Fengate, Moulton Chapel PE12 0XL</td>
+      <td>None stated</td>
+      <td>Garden of Elveden</td>
+      <td>NaN</td>
+      <td>Potatoes_(GB)</td>
+      <td>PE12 0XL</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>23950</th>
+      <td>0833/2022</td>
+      <td>2022-08-31</td>
+      <td>Lady Rosetta</td>
+      <td>England (UK)</td>
+      <td>Tyrrells Crisps</td>
+      <td>Tyrrells Court, Stretford Bridge, Leominster H...</td>
+      <td>None stated</td>
+      <td>KP Crisps</td>
+      <td>NaN</td>
+      <td>Potatoes_(GB)</td>
+      <td>HR6 9DQ</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>23951</th>
+      <td>0833/2022</td>
+      <td>2022-08-31</td>
+      <td>Lady Rosetta</td>
+      <td>England (UK)</td>
+      <td>Tyrrells Crisps</td>
+      <td>Tyrrells Court, Stretford Bridge, Leominster H...</td>
+      <td>None stated</td>
+      <td>KP Crisps</td>
+      <td>NaN</td>
+      <td>Potatoes_(GB)</td>
+      <td>HR6 9DQ</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+    </tr>
+  </tbody>
+</table>
+<p>23952 rows × 16 columns</p>
+</div></div></div>
+</div>
+</section>
+<section id="load-the-poscode-data">
+<h2>Load the poscode data<a class="headerlink" href="#load-the-poscode-data" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>map_data_file = os.path.join(MAIN_PATH, &quot;src&quot;, &quot;utils&quot;, &quot;map_data&quot;, &quot;postcode_to_region.csv&quot;)
+postcodes_df = mpu.get_poscode_df(path_to_csv = map_data_file)
+postcodes_df.head()
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">map_data_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">MAIN_PATH</span><span class="p">,</span> <span class="s2">&quot;src&quot;</span><span class="p">,</span> <span class="s2">&quot;utils&quot;</span><span class="p">,</span> <span class="s2">&quot;map_data&quot;</span><span class="p">,</span> <span class="s2">&quot;postcode_to_region.csv&quot;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">postcodes_df</span> <span class="o">=</span> <span class="n">mpu</span><span class="o">.</span><span class="n">get_poscode_df</span><span class="p">(</span><span class="n">path_to_csv</span> <span class="o">=</span> <span class="n">map_data_file</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">postcodes_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+
+<span class="ne">AttributeError</span>: module &#39;src.utils.map_utils&#39; has no attribute &#39;get_poscode_df&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="convert-the-postcode-to-area">
+<h2>Convert the postcode to area<a class="headerlink" href="#convert-the-postcode-to-area" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def create_area_col(df, postcodes_df, postcode_column):
+    postcode_dict = dict(postcodes_df.values)
+    
+    df[&#39;area_to_plot&#39;] = df.loc[:,postcode_column].map(postcode_dict)
+    return df
+
+postcode_column = &#39;address_postcode&#39;
+df = create_area_col(df, postcodes_df, postcode_column)
+df
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sample_id</th>
+      <th>date_of_sampling</th>
+      <th>description</th>
+      <th>country_of_origin</th>
+      <th>retail_outlet</th>
+      <th>address</th>
+      <th>brand_name</th>
+      <th>packer_/_manufacturer_/_importer</th>
+      <th>pesticide_residues_found_in_mg/kg_(mrl)</th>
+      <th>product</th>
+      <th>address_postcode</th>
+      <th>packer__postcode</th>
+      <th>chem_name</th>
+      <th>amount_detected</th>
+      <th>mrl</th>
+      <th>amount_pc</th>
+      <th>area_to_plot</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1958/2016</td>
+      <td>2016-08-08</td>
+      <td>Bramley Apples</td>
+      <td>UK</td>
+      <td>Asda</td>
+      <td>Creechbarrow Road, Taunton TA1 2AN</td>
+      <td>Asda</td>
+      <td>Asda Stores Ltd Leeds, UK LS11 5AD</td>
+      <td>boscalid 0.03 (MRL = 2)</td>
+      <td>Apple</td>
+      <td>TA1 2AN</td>
+      <td>LS11 5AD</td>
+      <td>boscalid</td>
+      <td>0.03</td>
+      <td>2.0</td>
+      <td>0.015000</td>
+      <td>Somerset</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1958/2016</td>
+      <td>2016-08-08</td>
+      <td>Bramley Apples</td>
+      <td>UK</td>
+      <td>Asda</td>
+      <td>Creechbarrow Road, Taunton TA1 2AN</td>
+      <td>Asda</td>
+      <td>Asda Stores Ltd Leeds, UK LS11 5AD</td>
+      <td>pyraclostrobin 0.01 (MRL = 0.5)</td>
+      <td>Apple</td>
+      <td>TA1 2AN</td>
+      <td>LS11 5AD</td>
+      <td>pyraclostrobin</td>
+      <td>0.01</td>
+      <td>0.5</td>
+      <td>0.020000</td>
+      <td>Somerset</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0230/2016</td>
+      <td>2016-08-08</td>
+      <td>Bramley Apples</td>
+      <td>UK</td>
+      <td>Co-op</td>
+      <td>Northgate, Louth LN11 0LT</td>
+      <td>Co-op</td>
+      <td>Co-operative Group Ltd Manchester M60 0AG</td>
+      <td>boscalid 0.05 (MRL = 2)</td>
+      <td>Apple</td>
+      <td>LN11 0LT</td>
+      <td>M60 0AG</td>
+      <td>boscalid</td>
+      <td>0.05</td>
+      <td>2.0</td>
+      <td>0.025000</td>
+      <td>Lincolnshire</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0230/2016</td>
+      <td>2016-08-08</td>
+      <td>Bramley Apples</td>
+      <td>UK</td>
+      <td>Co-op</td>
+      <td>Northgate, Louth LN11 0LT</td>
+      <td>Co-op</td>
+      <td>Co-operative Group Ltd Manchester M60 0AG</td>
+      <td>flonicamid (sum) 0.02 (MRL = 0.2)</td>
+      <td>Apple</td>
+      <td>LN11 0LT</td>
+      <td>M60 0AG</td>
+      <td>flonicamid (sum)</td>
+      <td>0.02</td>
+      <td>0.2</td>
+      <td>0.100000</td>
+      <td>Lincolnshire</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0230/2016</td>
+      <td>2016-08-08</td>
+      <td>Bramley Apples</td>
+      <td>UK</td>
+      <td>Co-op</td>
+      <td>Northgate, Louth LN11 0LT</td>
+      <td>Co-op</td>
+      <td>Co-operative Group Ltd Manchester M60 0AG</td>
+      <td>pyraclostrobin 0.03 (MRL = 0.5)</td>
+      <td>Apple</td>
+      <td>LN11 0LT</td>
+      <td>M60 0AG</td>
+      <td>pyraclostrobin</td>
+      <td>0.03</td>
+      <td>0.5</td>
+      <td>0.060000</td>
+      <td>Lincolnshire</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>23947</th>
+      <td>0792/2022</td>
+      <td>2022-09-08</td>
+      <td>Marfona Unwashed Potatoes</td>
+      <td>UK</td>
+      <td>Stoke Fruit Farm</td>
+      <td>77 Havant Road, Hayling Island, Hampshire PO11...</td>
+      <td>None stated</td>
+      <td>Stoke Fruit Farm 77 Havant Road, Hayling Islan...</td>
+      <td>maleic hydrazide 7.7 (MRL = 60)</td>
+      <td>Potatoes_(GB)</td>
+      <td>PO11 0PT</td>
+      <td>PO11 0PT</td>
+      <td>maleic hydrazide</td>
+      <td>7.70</td>
+      <td>60.0</td>
+      <td>0.128333</td>
+      <td>Hampshire</td>
+    </tr>
+    <tr>
+      <th>23948</th>
+      <td>0765/2022</td>
+      <td>2022-09-14</td>
+      <td>Sagitta Potatoes</td>
+      <td>UK</td>
+      <td>Total Produce Ltd.</td>
+      <td>Callywith Gate Industrial Estate, Launceston R...</td>
+      <td>None stated</td>
+      <td>CS Duston &amp; Son Colwith Farm, Par, Cornwall</td>
+      <td>maleic hydrazide 17 (MRL = 60)</td>
+      <td>Potatoes_(GB)</td>
+      <td>PL31 2RQ</td>
+      <td>0</td>
+      <td>maleic hydrazide</td>
+      <td>17.00</td>
+      <td>60.0</td>
+      <td>0.283333</td>
+      <td>Cornwall</td>
+    </tr>
+    <tr>
+      <th>23949</th>
+      <td>0938/2022</td>
+      <td>2022-09-01</td>
+      <td>Marfona Ware Potatoes</td>
+      <td>UK</td>
+      <td>Tulipland Potatoes Ltd</td>
+      <td>Fengate, Moulton Chapel PE12 0XL</td>
+      <td>None stated</td>
+      <td>Garden of Elveden</td>
+      <td>NaN</td>
+      <td>Potatoes_(GB)</td>
+      <td>PE12 0XL</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>Lincolnshire</td>
+    </tr>
+    <tr>
+      <th>23950</th>
+      <td>0833/2022</td>
+      <td>2022-08-31</td>
+      <td>Lady Rosetta</td>
+      <td>England (UK)</td>
+      <td>Tyrrells Crisps</td>
+      <td>Tyrrells Court, Stretford Bridge, Leominster H...</td>
+      <td>None stated</td>
+      <td>KP Crisps</td>
+      <td>NaN</td>
+      <td>Potatoes_(GB)</td>
+      <td>HR6 9DQ</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>Herefordshire</td>
+    </tr>
+    <tr>
+      <th>23951</th>
+      <td>0833/2022</td>
+      <td>2022-08-31</td>
+      <td>Lady Rosetta</td>
+      <td>England (UK)</td>
+      <td>Tyrrells Crisps</td>
+      <td>Tyrrells Court, Stretford Bridge, Leominster H...</td>
+      <td>None stated</td>
+      <td>KP Crisps</td>
+      <td>NaN</td>
+      <td>Potatoes_(GB)</td>
+      <td>HR6 9DQ</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>Herefordshire</td>
+    </tr>
+  </tbody>
+</table>
+<p>23952 rows × 17 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def how_many_failed(df):
+    tot_len = len(df)
+    bad_len = len(df.loc[df.area_to_plot.isna()])
+    bad_pcode = len(df.loc[df[postcode_column]==&#39;0&#39;])
+    bad_len = bad_len - bad_pcode
+    
+    print(f&quot;Number postcodes not found {bad_len} or {100*bad_len/tot_len:.1f}%,\
+ not including {bad_pcode} with no postcode&quot;)
+
+
+how_many_failed(df)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number postcodes not found 1435 or 6.0%, not including 213 with no postcode
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="reduce-the-length-of-the-postcode">
+<h2>Reduce the length of the postcode<a class="headerlink" href="#reduce-the-length-of-the-postcode" title="Permalink to this headline">#</a></h2>
+<p>6% or over 1,000 postcodes were not found. Which is a lot. Maybe a better postcode database is needed.</p>
+<p>But another way to find more postcode areas is to use less of the postcode</p>
+<p>For example for <code class="docutils literal notranslate"><span class="pre">AL1</span> <span class="pre">1AG</span></code></p>
+<ul class="simple">
+<li><p>try <code class="docutils literal notranslate"><span class="pre">AL1</span> <span class="pre">1A</span></code></p></li>
+<li><p>if still lots missing try <code class="docutils literal notranslate"><span class="pre">AL1</span> <span class="pre">1</span></code></p></li>
+<li><p>and then <code class="docutils literal notranslate"><span class="pre">AL1</span></code></p></li>
+</ul>
+<p>For these smaller post-code areas they can be in more than one plot area. A quick way to choose which area to use is the area which has the most postcodes. Maybe a better way would be to look for postcodes near in the alphabet, but this way is simpler.</p>
+<p>So for example, in the below if a postcode AL1 1AA is unknown. Because all the other postcodes AL1 1A are Hertfordshire it will assign that unkown postcode to Hertfordshire. If the areas are split (e.g. AL1 1AS was in West Wales but the rest the same) it would assign the unknown postcode AL1 1AA to Hertfordshire.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>postcodes_df.loc[postcodes_df[&#39;Postcode&#39;].apply(lambda x: x[:-1])==&#39;AL1 1A&#39;]
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Postcode</th>
+      <th>mapArea</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>AL1 1AG</td>
+      <td>Hertfordshire</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>AL1 1AJ</td>
+      <td>Hertfordshire</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>AL1 1AR</td>
+      <td>Hertfordshire</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>AL1 1AS</td>
+      <td>Hertfordshire</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>AL1 1AT</td>
+      <td>Hertfordshire</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>AL1 1AU</td>
+      <td>Hertfordshire</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>AL1 1AW</td>
+      <td>Hertfordshire</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<section id="it-works-but-a-tad-convoluted">
+<h3>It works but a tad convoluted<a class="headerlink" href="#it-works-but-a-tad-convoluted" title="Permalink to this headline">#</a></h3>
+<p>Create a list</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def get_postcode_list(postcodes_df=postcodes_df,
+                    usecols=[&#39;Postcode&#39;,&#39;mapArea&#39;],
+                    reduce_p_max=6
+                    ):
+    &quot;&quot;&quot;
+    loads poscode data and returns that as a list of dataframes
+    where postcode has has been reduced by 1:reduce_p_max-1 in length
+    
+    Args:   path_to_csv (path) csv file of postcode data
+            usecols (list[str]) what columns to load, also includes latitude,longitude
+            reduce_p_max (int) number of chars to take off end of potscode -1
+    Returns: 
+        list_postcodes_df (list[pd.DataFrame]) list of pandas dataframe of the postcode data
+    
+    &quot;&quot;&quot;   
+
+    postcodes_df_temp = postcodes_df.copy()
+    
+    list_postcodes_df = []
+    list_postcodes_df.append( postcodes_df_temp.copy() )
+    
+    for i in range(1,reduce_p_max):
+        colname = f&quot;Postcode_m{i}&quot;
+        
+        if i!=0:
+            postcodes_df_temp[colname] = postcodes_df_temp[&#39;Postcode&#39;].str[:-i]    
+        
+        df = _getpc(postcodes_df_temp, colname)
+        df = df.rename(columns={colname:&#39;Postcode&#39;})
+        list_postcodes_df.append( df )
+    
+    
+    return list_postcodes_df
+
+def _getpc(postcodes_df_temp, colname):
+    &quot;&quot;&quot;
+    Helper function to identify the region when a postcode is across multiple regions
+    Does this by selecting region that has most postcodes
+    e.g. BH1 8L is in two areas (A and B), area A is in 3 times and B in 5 times, 
+        so B is selected as the area
+    Args:   postcodes_df_temp (pd.DataFrame) dataframe of postcode data
+            colname (str) what column to process some variant of postcode
+    Returns: 
+        postcode_short (pd.DataFrame) modified dataframe with new variable mapArea
+    &quot;&quot;&quot;
+    postcodes_df_temp = postcodes_df_temp.groupby(by=[colname,&#39;mapArea&#39;], as_index=False).count()
+
+    postcode_short = postcodes_df_temp.sort_values(&#39;Postcode&#39;, ascending=False).drop_duplicates([colname])
+    
+    postcode_short = postcode_short.loc[:,[colname,&#39;mapArea&#39;]].reset_index(drop=True)
+    return postcode_short
+
+shorter_pc_list = get_postcode_list()
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>print( len(shorter_pc_list) )
+shorter_pc_list[1].head()
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Postcode</th>
+      <th>mapArea</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>AB32 6P</td>
+      <td>North East Scotland</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>AB32 6T</td>
+      <td>North East Scotland</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>AB32 6S</td>
+      <td>North East Scotland</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>AB32 6R</td>
+      <td>North East Scotland</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>AB32 6W</td>
+      <td>North East Scotland</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>dfnew= copy.deepcopy(df)
+dfnew = dfnew.loc[:,[&#39;address&#39;,&#39;address_postcode&#39;]]
+
+for removeChar in range(0,6):
+    # create a new column
+   
+    if removeChar!=0:
+        postcode_columnNEW =postcode_column+f&#39;{removeChar}&#39;
+        dfnew[postcode_columnNEW]=df[postcode_column].str[:-removeChar]
+    else:
+        postcode_columnNEW=postcode_column
+    dfnew = create_area_col(dfnew, 
+                     shorter_pc_list[removeChar], postcode_columnNEW)
+    print()
+    print(f&#39;For postcode smaller by {removeChar} characters&#39;)
+    how_many_failed(dfnew)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>For postcode smaller by 0 characters
+Number postcodes not found 1435 or 6.0%, not including 213 with no postcode
+
+For postcode smaller by 1 characters
+Number postcodes not found 695 or 2.9%, not including 213 with no postcode
+
+For postcode smaller by 2 characters
+Number postcodes not found 213 or 0.9%, not including 213 with no postcode
+
+For postcode smaller by 3 characters
+Number postcodes not found 95 or 0.4%, not including 213 with no postcode
+
+For postcode smaller by 4 characters
+Number postcodes not found 95 or 0.4%, not including 213 with no postcode
+
+For postcode smaller by 5 characters
+Number postcodes not found 92 or 0.4%, not including 213 with no postcode
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="update-postcode-data">
+<h2>Update postcode data<a class="headerlink" href="#update-postcode-data" title="Permalink to this headline">#</a></h2>
+<p>So if we take away 3 characters (for example, AL1 1AG -&gt; AL1) 99.6% of the postcodes are found.</p>
+<p>Now we need to add the postcodes which didn’t appear in teh original postcode dataset to that dataset with the new areas found.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def _create_area_col(df, postcodes_df, postcode_column):
+    df_ =copy.deepcopy(df)
+    postcode_dict = dict(postcodes_df[[&#39;Postcode&#39;,&#39;mapArea&#39;]].values)
+    
+    df_[&#39;mapArea&#39;] = df_.loc[:,postcode_column].map(postcode_dict)
+    return df_[&#39;mapArea&#39;]
+
+def dothis(df, MAIN_PATH, shorter_pc_list,postcode_column = &#39;address_postcode&#39;):
+
+    # load postcode to area df
+    map_data_file = os.path.join(MAIN_PATH, &quot;src&quot;, &quot;utils&quot;, &quot;map_data&quot;, &quot;postcode_to_region.csv&quot;)
+    postcodes_to_area_df = mpu.get_poscode_df(path_to_csv = map_data_file)
+    postcodes_to_area_df[&#39;removeChar&#39;]=0
+    
+    
+    df_pc= copy.deepcopy(df)
+
+    # get the unique post-codes and ignore ones that don&#39;t exist =&#39;0&#39;
+    df_pc =pd.DataFrame(data=df[postcode_column].unique(),columns=[&#39;Postcode&#39;])
+    df_pc = df_pc.loc[df_pc.Postcode!=&#39;0&#39;]
+
+    postcode_column = &#39;Postcode&#39;
+
+    # check if already in the postcode to area df
+    # just use the ones that are not
+    df_pc[&#39;mapArea&#39;] = _create_area_col(df_pc, postcodes_to_area_df, &#39;Postcode&#39;)
+    df_pc = df_pc.loc[df_pc[&#39;mapArea&#39;].isna()]
+
+    print(f&quot;After initial mapping\n \
+The length of postcode mapper is {len(postcodes_to_area_df)} \n \
+and {len(df_pc)} still unknonwn\n&quot;)
+    
+    for removeChar in range(1,4):
+        print(&#39;&gt;&gt; Post-code length reduced by &#39;,removeChar)
+        # remove 1 char from the postcode
+        df_pc[postcode_column]=df_pc[postcode_column].str[:-1]
+
+        df_pc[&#39;mapArea&#39;] = _create_area_col(df_pc, 
+                         shorter_pc_list[removeChar], postcode_column)
+
+           
+        # add new values to the dictionary
+        df_add = copy.deepcopy(df_pc[[&#39;Postcode&#39;,&#39;mapArea&#39;]].loc[df_pc[&#39;mapArea&#39;].notna()])
+        df_add[&#39;removeChar&#39;] = removeChar
+        
+        
+        postcodes_to_area_df = pd.concat([ postcodes_to_area_df, df_add ])      
+        print(f&quot;Number of new postcodes added {len(df_add)}&quot;)
+
+        # just use postcodes not found in next iteration 
+        df_pc = copy.deepcopy(df_pc.loc[df_pc[&#39;mapArea&#39;].isna()])
+        print(f&quot;The length of postcode mapper is {len(postcodes_to_area_df)} \n\
+and {len(df_pc)} still unknonwn&quot;)
+        
+        print()
+        
+    return postcodes_to_area_df, df_add, df_pc
+        
+newPC, df_add, df_pc = dothis(df, MAIN_PATH, shorter_pc_list)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>After initial mapping
+ The length of postcode mapper is 1874663 
+ and 147 still unknonwn
+
+&gt;&gt; Poscode length reduced by  1
+Number of new postcodes added 80
+The length of postcode mapper is 1874743 
+and 67 still unknonwn
+
+&gt;&gt; Poscode length reduced by  2
+Number of new postcodes added 18
+The length of postcode mapper is 1874761 
+and 49 still unknonwn
+
+&gt;&gt; Poscode length reduced by  3
+Number of new postcodes added 27
+The length of postcode mapper is 1874788 
+and 22 still unknonwn
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df_pc
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Postcode</th>
+      <th>mapArea</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>8</th>
+      <td>CU34</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>E74</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>195</th>
+      <td>CU34</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>199</th>
+      <td>WS77</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>206</th>
+      <td>PC21</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>303</th>
+      <td>CU31</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>326</th>
+      <td>EL5</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>377</th>
+      <td>Y12</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>378</th>
+      <td>B55</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>444</th>
+      <td>C06</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>477</th>
+      <td>HP24</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>518</th>
+      <td>CU31</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>542</th>
+      <td>PS14</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>647</th>
+      <td>BR10</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>825</th>
+      <td>DM14</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>830</th>
+      <td>CF51</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>843</th>
+      <td>B52</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>911</th>
+      <td>TM4</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1266</th>
+      <td>LH6</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1494</th>
+      <td>A11</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1611</th>
+      <td>HO6</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1623</th>
+      <td>TG2</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>postcode_column = &#39;address_postcode&#39;
+map_data_file = os.path.join(MAIN_PATH, &quot;src&quot;, &quot;utils&quot;, &quot;map_data&quot;, &quot;postcode_to_region.csv&quot;)
+postcodes_to_area_df = mpu.get_poscode_df(path_to_csv = map_data_file)
+
+df_pc= copy.deepcopy(df)
+
+# get the unique post-codes and ignore ones that don&#39;t exist =&#39;0&#39;
+df_pc =pd.DataFrame(data=df[postcode_column].unique(),columns=[&#39;Postcode&#39;])
+df_pc = df_pc.loc[df_pc.Postcode!=&#39;0&#39;]
+
+postcode_column = &#39;Postcode&#39;
+
+# check if already in the postcode to area df
+# just use the ones that are not
+df_pc = _create_area_col(df_pc, postcodes_to_area_df, &#39;Postcode&#39;)
+df_pc = df_pc.loc[df_pc[&#39;mapArea&#39;].isna()]
+
+removeChar = 2
+df_pc[postcode_column]=df_pc[postcode_column].str[:-removeChar]
+
+dfnew = _create_area_col(df_pc, 
+                 shorter_pc_list[removeChar], postcode_column)
+
+# add new values to the dictionary
+df_add = copy.deepcopy(dfnew[[&#39;Postcode&#39;,&#39;mapArea&#39;]].loc[dfnew[&#39;mapArea&#39;].notna()])
+postcodes_to_area_df = pd.concat([ postcodes_to_area_df, df_add ])      
+
+
+# just use postcodes not found in next iteration 
+df_pc = dfnew.loc[dfnew[&#39;mapArea&#39;].isna()].copy()
+
+
+
+        
+</pre></div>
+</div>
+</div>
+</div>
+<p><a class="reference external" href="https://thomashsimm.github.io/PesticideDocs/CombiningMaps.html">Go back</a></p>
+<p><a class="reference external" href="https://thomashsimm.github.io/PesticideDocs/UK_areas.html">First page</a></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Thomas Simm<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
