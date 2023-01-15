@@ -308,78 +308,94 @@ cmu.main(save_dir = os.path.join(MAIN_PATH, &#39;src&#39;, &#39;utils&#39;, &#39
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.\_data\England1 postcodes.csv
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.\_data\England2 postcodes.csv
+</pre></div>
+</div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="ne">ParserError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">src.utils.create_map_utils</span> <span class="k">as</span> <span class="nn">cmu</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">os</span>
 <span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">cmu</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="n">save_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">MAIN_PATH</span><span class="p">,</span> <span class="s1">&#39;src&#39;</span><span class="p">,</span> <span class="s1">&#39;utils&#39;</span><span class="p">,</span> <span class="s1">&#39;map_data&#39;</span><span class="p">))</span>
 
-<span class="nn">File ~\Documents\GitHub\Pesticide\src\utils\create_map_utils.py:62,</span> in <span class="ni">main</span><span class="nt">(save_dir)</span>
-<span class="g g-Whitespace">     </span><span class="mi">60</span> <span class="n">save_dir</span>
-<span class="g g-Whitespace">     </span><span class="mi">61</span> <span class="c1"># below the data above is used to create a json file and saved locally</span>
-<span class="ne">---&gt; </span><span class="mi">62</span> <span class="n">url_KML_map</span><span class="p">(</span><span class="n">url_data_paths</span><span class="p">,</span> <span class="s1">&#39;combined_json&#39;</span><span class="p">,</span> 
+<span class="nn">File ~\Documents\GitHub\Pesticide\src\utils\create_map_utils.py:67,</span> in <span class="ni">main</span><span class="nt">(save_dir)</span>
+<span class="g g-Whitespace">     </span><span class="mi">62</span> <span class="n">url_KML_map</span><span class="p">(</span><span class="n">url_data_paths</span><span class="p">,</span> <span class="s1">&#39;combined_json&#39;</span><span class="p">,</span> 
 <span class="g g-Whitespace">     </span><span class="mi">63</span>             <span class="n">doScotWales</span><span class="o">=</span><span class="n">country</span><span class="p">,</span>
 <span class="g g-Whitespace">     </span><span class="mi">64</span>             <span class="n">save_dir</span> <span class="o">=</span> <span class="n">save_dir</span><span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">66</span> <span class="c1"># a mapper dataframe of postcode -&gt; area is created anf then saved</span>
-<span class="g g-Whitespace">     </span><span class="mi">67</span> <span class="n">postcode_df</span> <span class="o">=</span> <span class="n">load_pcode_csvs</span><span class="p">()</span>
+<span class="ne">---&gt; </span><span class="mi">67</span> <span class="n">postcode_df</span> <span class="o">=</span> <span class="n">load_pcode_csvs</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">69</span> <span class="n">postcode_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">save_dir</span><span class="p">,</span><span class="s2">&quot;postcode_to_region.csv&quot;</span><span class="p">))</span>
 
-<span class="nn">File ~\Documents\GitHub\Pesticide\src\utils\create_map_utils.py:145,</span> in <span class="ni">url_KML_map</span><span class="nt">(url_data_paths, json_fname, doScotWales, save_dir)</span>
-<span class="g g-Whitespace">    </span><span class="mi">143</span> <span class="c1"># create a json file for plotting and gives back names of regions</span>
-<span class="g g-Whitespace">    </span><span class="mi">144</span> <span class="n">fname</span><span class="o">=</span> <span class="n">json_fname</span> <span class="o">+</span><span class="s1">&#39;.json&#39;</span>
-<span class="ne">--&gt; </span><span class="mi">145</span> <span class="n">map_names</span><span class="p">,</span> <span class="n">json_path</span> <span class="o">=</span> <span class="n">gdf_create_json</span><span class="p">(</span><span class="n">gdfAll</span><span class="p">,</span> <span class="n">loc_save</span><span class="o">=</span><span class="n">save_dir</span><span class="p">,</span> <span class="n">fname</span><span class="o">=</span><span class="n">fname</span><span class="p">)</span>
+<span class="nn">File ~\Documents\GitHub\Pesticide\src\utils\create_map_utils.py:246,</span> in <span class="ni">load_pcode_csvs</span><span class="nt">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">243</span>     <span class="n">df_temp</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Scotland&#39;</span>
+<span class="g g-Whitespace">    </span><span class="mi">245</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">246</span>     <span class="n">df_temp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> 
+<span class="g g-Whitespace">    </span><span class="mi">247</span>              <span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Postcode&#39;</span><span class="p">,</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span><span class="s1">&#39;District&#39;</span><span class="p">,</span><span class="s1">&#39;District Code&#39;</span><span class="p">,</span><span class="s1">&#39;County&#39;</span><span class="p">,</span><span class="s1">&#39;Population&#39;</span><span class="p">])</span>
+<span class="g g-Whitespace">    </span><span class="mi">249</span> <span class="n">postcode_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">postcode_df</span><span class="p">,</span> <span class="n">df_temp</span><span class="p">])</span>
+<span class="g g-Whitespace">    </span><span class="mi">251</span> <span class="c1"># call function for additional procs</span>
 
-<span class="nn">File ~\Documents\GitHub\Pesticide\src\utils\create_map_utils.py:106,</span> in <span class="ni">gdf_create_json</span><span class="nt">(gdf, loc_save, fname)</span>
-<span class="g g-Whitespace">    </span><span class="mi">104</span> <span class="c1"># Save as a json file to load in plot_map</span>
-<span class="g g-Whitespace">    </span><span class="mi">105</span> <span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">loc_save</span><span class="p">,</span> <span class="n">fname</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">106</span> <span class="n">gdf</span><span class="o">.</span><span class="n">to_file</span><span class="p">(</span> <span class="n">file_path</span><span class="p">,</span> <span class="n">driver</span><span class="o">=</span><span class="s2">&quot;GeoJSON&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">109</span> <span class="k">return</span> <span class="n">gdf</span><span class="o">.</span><span class="n">Name</span><span class="p">,</span> <span class="n">file_path</span>
+<span class="nn">File c:\users\44781\anaconda3\envs\ons-env\lib\site-packages\pandas\util\_decorators.py:211,</span> in <span class="ni">deprecate_kwarg.&lt;locals&gt;._deprecate_kwarg.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">209</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">210</span>         <span class="n">kwargs</span><span class="p">[</span><span class="n">new_arg_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_arg_value</span>
+<span class="ne">--&gt; </span><span class="mi">211</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-<span class="nn">File c:\users\44781\anaconda3\envs\ons-env\lib\site-packages\geopandas\geodataframe.py:1203,</span> in <span class="ni">GeoDataFrame.to_file</span><span class="nt">(self, filename, driver, schema, index, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1120</span> <span class="sd">&quot;&quot;&quot;Write the ``GeoDataFrame`` to a file.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1121</span><span class="sd"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">1122</span><span class="sd"> By default, an ESRI shapefile is written, but any OGR data source</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1199</span><span class="sd"> &gt;&gt;&gt; gdf.to_file(&#39;dataframe.shp&#39;, mode=&quot;a&quot;)  # doctest: +SKIP</span>
-<span class="g g-Whitespace">   </span><span class="mi">1200</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1201</span> <span class="kn">from</span> <span class="nn">geopandas.io.file</span> <span class="kn">import</span> <span class="n">_to_file</span>
-<span class="ne">-&gt; </span><span class="mi">1203</span> <span class="n">_to_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">driver</span><span class="p">,</span> <span class="n">schema</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="nn">File c:\users\44781\anaconda3\envs\ons-env\lib\site-packages\pandas\util\_decorators.py:331,</span> in <span class="ni">deprecate_nonkeyword_arguments.&lt;locals&gt;.decorate.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">325</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">num_allow_args</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">326</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">327</span>         <span class="n">msg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arguments</span><span class="o">=</span><span class="n">_format_argument_list</span><span class="p">(</span><span class="n">allow_args</span><span class="p">)),</span>
+<span class="g g-Whitespace">    </span><span class="mi">328</span>         <span class="ne">FutureWarning</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">329</span>         <span class="n">stacklevel</span><span class="o">=</span><span class="n">find_stack_level</span><span class="p">(),</span>
+<span class="g g-Whitespace">    </span><span class="mi">330</span>     <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">331</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-<span class="nn">File c:\users\44781\anaconda3\envs\ons-env\lib\site-packages\geopandas\io\file.py:545,</span> in <span class="ni">_to_file</span><span class="nt">(df, filename, driver, schema, index, mode, crs, engine, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">538</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">539</span>         <span class="s2">&quot;Column names longer than 10 characters will be truncated when saved to &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">540</span>         <span class="s2">&quot;ESRI Shapefile.&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">541</span>         <span class="n">stacklevel</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">542</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">544</span> <span class="k">if</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;fiona&quot;</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">545</span>     <span class="n">_to_file_fiona</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">driver</span><span class="p">,</span> <span class="n">schema</span><span class="p">,</span> <span class="n">crs</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">546</span> <span class="k">elif</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;pyogrio&quot;</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">547</span>     <span class="n">_to_file_pyogrio</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">driver</span><span class="p">,</span> <span class="n">schema</span><span class="p">,</span> <span class="n">crs</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="nn">File c:\users\44781\anaconda3\envs\ons-env\lib\site-packages\pandas\io\parsers\readers.py:950,</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, error_bad_lines, warn_bad_lines, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">935</span> <span class="n">kwds_defaults</span> <span class="o">=</span> <span class="n">_refine_defaults_read</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">936</span>     <span class="n">dialect</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">937</span>     <span class="n">delimiter</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">946</span>     <span class="n">defaults</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;delimiter&quot;</span><span class="p">:</span> <span class="s2">&quot;,&quot;</span><span class="p">},</span>
+<span class="g g-Whitespace">    </span><span class="mi">947</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">948</span> <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">950</span> <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
 
-<span class="nn">File c:\users\44781\anaconda3\envs\ons-env\lib\site-packages\geopandas\io\file.py:575,</span> in <span class="ni">_to_file_fiona</span><span class="nt">(df, filename, driver, schema, crs, mode, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">571</span>     <span class="n">crs_wkt</span> <span class="o">=</span> <span class="n">crs</span><span class="o">.</span><span class="n">to_wkt</span><span class="p">(</span><span class="s2">&quot;WKT1_GDAL&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">572</span> <span class="k">with</span> <span class="n">fiona</span><span class="o">.</span><span class="n">open</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">573</span>     <span class="n">filename</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span> <span class="n">driver</span><span class="o">=</span><span class="n">driver</span><span class="p">,</span> <span class="n">crs_wkt</span><span class="o">=</span><span class="n">crs_wkt</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="n">schema</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
-<span class="g g-Whitespace">    </span><span class="mi">574</span> <span class="p">)</span> <span class="k">as</span> <span class="n">colxn</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">575</span>     <span class="n">colxn</span><span class="o">.</span><span class="n">writerecords</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iterfeatures</span><span class="p">())</span>
+<span class="nn">File c:\users\44781\anaconda3\envs\ons-env\lib\site-packages\pandas\io\parsers\readers.py:611,</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">608</span>     <span class="k">return</span> <span class="n">parser</span>
+<span class="g g-Whitespace">    </span><span class="mi">610</span> <span class="k">with</span> <span class="n">parser</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">611</span>     <span class="k">return</span> <span class="n">parser</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">nrows</span><span class="p">)</span>
 
-<span class="nn">File c:\users\44781\anaconda3\envs\ons-env\lib\site-packages\fiona\collection.py:361,</span> in <span class="ni">Collection.writerecords</span><span class="nt">(self, records)</span>
-<span class="g g-Whitespace">    </span><span class="mi">359</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">360</span>     <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="s2">&quot;collection not open for writing&quot;</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">361</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">writerecs</span><span class="p">(</span><span class="n">records</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">362</span> <span class="bp">self</span><span class="o">.</span><span class="n">_len</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">get_length</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">363</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bounds</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="nn">File c:\users\44781\anaconda3\envs\ons-env\lib\site-packages\pandas\io\parsers\readers.py:1778,</span> in <span class="ni">TextFileReader.read</span><span class="nt">(self, nrows)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1771</span> <span class="n">nrows</span> <span class="o">=</span> <span class="n">validate_integer</span><span class="p">(</span><span class="s2">&quot;nrows&quot;</span><span class="p">,</span> <span class="n">nrows</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1772</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1773</span>     <span class="c1"># error: &quot;ParserBase&quot; has no attribute &quot;read&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1774</span>     <span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1775</span>         <span class="n">index</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1776</span>         <span class="n">columns</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1777</span>         <span class="n">col_dict</span><span class="p">,</span>
+<span class="ne">-&gt; </span><span class="mi">1778</span>     <span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span><span class="o">.</span><span class="n">read</span><span class="p">(</span>  <span class="c1"># type: ignore[attr-defined]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1779</span>         <span class="n">nrows</span>
+<span class="g g-Whitespace">   </span><span class="mi">1780</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1781</span> <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1782</span>     <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
-<span class="nn">File fiona\ogrext.pyx:1269,</span> in <span class="ni">fiona.ogrext.WritingSession.writerecs</span><span class="nt">()</span>
+<span class="nn">File c:\users\44781\anaconda3\envs\ons-env\lib\site-packages\pandas\io\parsers\c_parser_wrapper.py:230,</span> in <span class="ni">CParserWrapper.read</span><span class="nt">(self, nrows)</span>
+<span class="g g-Whitespace">    </span><span class="mi">228</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">229</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">low_memory</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">230</span>         <span class="n">chunks</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reader</span><span class="o">.</span><span class="n">read_low_memory</span><span class="p">(</span><span class="n">nrows</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">231</span>         <span class="c1"># destructive to chunks</span>
+<span class="g g-Whitespace">    </span><span class="mi">232</span>         <span class="n">data</span> <span class="o">=</span> <span class="n">_concatenate_chunks</span><span class="p">(</span><span class="n">chunks</span><span class="p">)</span>
 
-<span class="nn">File c:\users\44781\anaconda3\envs\ons-env\lib\site-packages\geopandas\geodataframe.py:903,</span> in <span class="ni">GeoDataFrame.iterfeatures</span><span class="nt">(self, na, show_bbox, drop_id)</span>
-<span class="g g-Whitespace">    </span><span class="mi">900</span>         <span class="k">if</span> <span class="n">show_bbox</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">901</span>             <span class="n">feature</span><span class="p">[</span><span class="s2">&quot;bbox&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">geom</span><span class="o">.</span><span class="n">bounds</span> <span class="k">if</span> <span class="n">geom</span> <span class="k">else</span> <span class="kc">None</span>
-<span class="ne">--&gt; </span><span class="mi">903</span>         <span class="k">yield</span> <span class="n">feature</span>
-<span class="g g-Whitespace">    </span><span class="mi">905</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">906</span>     <span class="k">for</span> <span class="n">fid</span><span class="p">,</span> <span class="n">geom</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">ids</span><span class="p">,</span> <span class="n">geometries</span><span class="p">):</span>
+<span class="nn">File c:\users\44781\anaconda3\envs\ons-env\lib\site-packages\pandas\_libs\parsers.pyx:808,</span> in <span class="ni">pandas._libs.parsers.TextReader.read_low_memory</span><span class="nt">()</span>
 
-<span class="ne">KeyboardInterrupt</span>: 
+<span class="nn">File c:\users\44781\anaconda3\envs\ons-env\lib\site-packages\pandas\_libs\parsers.pyx:866,</span> in <span class="ni">pandas._libs.parsers.TextReader._read_rows</span><span class="nt">()</span>
+
+<span class="nn">File c:\users\44781\anaconda3\envs\ons-env\lib\site-packages\pandas\_libs\parsers.pyx:852,</span> in <span class="ni">pandas._libs.parsers.TextReader._tokenize_rows</span><span class="nt">()</span>
+
+<span class="nn">File c:\users\44781\anaconda3\envs\ons-env\lib\site-packages\pandas\_libs\parsers.pyx:1973,</span> in <span class="ni">pandas._libs.parsers.raise_parser_error</span><span class="nt">()</span>
+
+<span class="ne">ParserError</span>: Error tokenizing data. C error: Calling read(nbytes) on source failed. Try engine=&#39;python&#39;.
 </pre></div>
 </div>
 </div>
