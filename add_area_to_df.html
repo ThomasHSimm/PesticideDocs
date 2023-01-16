@@ -1263,12 +1263,12 @@ for removeChar in range(0,6):
 Number postcodes not found 1435 or 6.0%, not including 213 with no postcode
 
 For postcode smaller by 1 characters
-Number postcodes not found 695 or 2.9%, not including 213 with no postcode
-
-For postcode smaller by 2 characters
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number postcodes not found 213 or 0.9%, not including 213 with no postcode
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number postcodes not found 695 or 2.9%, not including 213 with no postcode
+
+For postcode smaller by 2 characters
+Number postcodes not found 213 or 0.9%, not including 213 with no postcode
 
 For postcode smaller by 3 characters
 Number postcodes not found 95 or 0.4%, not including 213 with no postcode
@@ -1373,72 +1373,6 @@ and 49 still unknonwn
 Number of new postcodes added 27
 The length of postcode mapper is 1874788 
 and 22 still unknonwn
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>MAIN_PATH
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;C:\\Users\\44781\\Documents\\GitHub\\Pesticide&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>postcode_column = &#39;address_postcode&#39;
-map_data_file = os.path.join(MAIN_PATH, &quot;src&quot;, &quot;utils&quot;, &quot;map_data&quot;, &quot;postcode_to_region.csv&quot;)
-postcodes_to_area_df = mpu.get_poscode_df(path_to_csv = map_data_file)
-
-df_pc= copy.deepcopy(df)
-
-# get the unique post-codes and ignore ones that don&#39;t exist =&#39;0&#39;
-df_pc =pd.DataFrame(data=df[postcode_column].unique(),columns=[&#39;Postcode&#39;])
-df_pc = df_pc.loc[df_pc.Postcode!=&#39;0&#39;]
-
-postcode_column = &#39;Postcode&#39;
-
-# check if already in the postcode to area df
-# just use the ones that are not
-df_pc = _create_area_col(df_pc, postcodes_to_area_df, &#39;Postcode&#39;)
-df_pc = df_pc.loc[df_pc[&#39;mapArea&#39;].isna()]
-
-removeChar = 2
-df_pc[postcode_column]=df_pc[postcode_column].str[:-removeChar]
-
-dfnew = _create_area_col(df_pc, 
-                 shorter_pc_list[removeChar], postcode_column)
-
-# add new values to the dictionary
-df_add = copy.deepcopy(dfnew[[&#39;Postcode&#39;,&#39;mapArea&#39;]].loc[dfnew[&#39;mapArea&#39;].notna()])
-postcodes_to_area_df = pd.concat([ postcodes_to_area_df, df_add ])      
-
-
-# just use postcodes not found in next iteration 
-df_pc = dfnew.loc[dfnew[&#39;mapArea&#39;].isna()].copy()
-
-
-
-        
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">postcode_column</span> <span class="o">=</span> <span class="s1">&#39;address_postcode&#39;</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">map_data_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">MAIN_PATH</span><span class="p">,</span> <span class="s2">&quot;src&quot;</span><span class="p">,</span> <span class="s2">&quot;utils&quot;</span><span class="p">,</span> <span class="s2">&quot;map_data&quot;</span><span class="p">,</span> <span class="s2">&quot;postcode_to_region.csv&quot;</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">postcodes_to_area_df</span> <span class="o">=</span> <span class="n">mpu</span><span class="o">.</span><span class="n">get_poscode_df</span><span class="p">(</span><span class="n">path_to_csv</span> <span class="o">=</span> <span class="n">map_data_file</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">df_pc</span><span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="c1"># get the unique post-codes and ignore ones that don&#39;t exist =&#39;0&#39;</span>
-
-<span class="ne">AttributeError</span>: module &#39;src.utils.map_utils&#39; has no attribute &#39;get_poscode_df&#39;
 </pre></div>
 </div>
 </div>
