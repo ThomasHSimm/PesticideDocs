@@ -15,13 +15,6 @@ The Department for Environment, Food and Rural Affairs conducts pesticide testin
 
 ## Links
 
-<<<<<<< HEAD
-Github repo is here -> [github.com/ThomasHSimm/Pesticide](https://github.com/ThomasHSimm/Pesticide) and the current streamlit app is here [/thomashsimm-pesticide-pest-streamlit](https://thomashsimm-pesticide-pest-streamlit-ku7yyt.streamlit.app/)
-=======
 Github repo is here -> [github.com/ThomasHSimm/Pesticide](https://github.com/ThomasHSimm/Pesticide) and the current streamlit app is here [/thomashsimm-pesticide-pest-streamlit]https://thomashsimm-pesticide-pest-streamlit-ku7yyt.streamlit.app/)
->>>>>>> 80d93c997cc2d3c736e04749c933aa513b614ccd
 
-- Markdown Files
-- Content with notebooks
-- Notebooks with MyST Markdown
-
+This Github repo is here -> [github.com/ThomasHSimm/PesticideDocs](https://github.com/ThomasHSimm/PesticideDocs)
