@@ -17,18 +17,50 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
+postcode_column = 'address_postcode'
 map_data_file = os.path.join(MAIN_PATH, "src", "utils", "map_data", "postcode_to_region.csv")
-postcodes_df = mpu.get_poscode_df(path_to_csv = map_data_file)
-postcodes_df.head()
+postcodes_to_area_df = mpu.get_poscode_df(path_to_csv = map_data_file)
 
+df_pc= copy.deepcopy(df)
+
+# get the unique post-codes and ignore ones that don't exist ='0'
+df_pc =pd.DataFrame(data=df[postcode_column].unique(),columns=['Postcode'])
+df_pc = df_pc.loc[df_pc.Postcode!='0']
+
+postcode_column = 'Postcode'
+
+# check if already in the postcode to area df
+# just use the ones that are not
+df_pc = _create_area_col(df_pc, postcodes_to_area_df, 'Postcode')
+df_pc = df_pc.loc[df_pc['mapArea'].isna()]
+
+removeChar = 2
+df_pc[postcode_column]=df_pc[postcode_column].str[:-removeChar]
+
+dfnew = _create_area_col(df_pc, 
+                 shorter_pc_list[removeChar], postcode_column)
+
+# add new values to the dictionary
+df_add = copy.deepcopy(dfnew[['Postcode','mapArea']].loc[dfnew['mapArea'].notna()])
+postcodes_to_area_df = pd.concat([ postcodes_to_area_df, df_add ])      
+
+
+# just use postcodes not found in next iteration 
+df_pc = dfnew.loc[dfnew['mapArea'].isna()].copy()
+
+
+
+        
 ------------------
 
 [1;31m---------------------------------------------------------------------------[0m
 [1;31mAttributeError[0m                            Traceback (most recent call last)
-Cell [1;32mIn[3], line 2[0m
-[0;32m      1[0m map_data_file [38;5;241m=[39m os[38;5;241m.[39mpath[38;5;241m.[39mjoin(MAIN_PATH, [38;5;124m"[39m[38;5;124msrc[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mutils[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mmap_data[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mpostcode_to_region.csv[39m[38;5;124m"[39m)
-[1;32m----> 2[0m postcodes_df [38;5;241m=[39m [43mmpu[49m[38;5;241;43m.[39;49m[43mget_poscode_df[49m(path_to_csv [38;5;241m=[39m map_data_file)
-[0;32m      3[0m postcodes_df[38;5;241m.[39mhead()
+Cell [1;32mIn[12], line 3[0m
+[0;32m      1[0m postcode_column [38;5;241m=[39m [38;5;124m'[39m[38;5;124maddress_postcode[39m[38;5;124m'[39m
+[0;32m      2[0m map_data_file [38;5;241m=[39m os[38;5;241m.[39mpath[38;5;241m.[39mjoin(MAIN_PATH, [38;5;124m"[39m[38;5;124msrc[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mutils[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mmap_data[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mpostcode_to_region.csv[39m[38;5;124m"[39m)
+[1;32m----> 3[0m postcodes_to_area_df [38;5;241m=[39m [43mmpu[49m[38;5;241;43m.[39;49m[43mget_poscode_df[49m(path_to_csv [38;5;241m=[39m map_data_file)
+[0;32m      5[0m df_pc[38;5;241m=[39m copy[38;5;241m.[39mdeepcopy(df)
+[0;32m      7[0m [38;5;66;03m# get the unique post-codes and ignore ones that don't exist ='0'[39;00m
 
 [1;31mAttributeError[0m: module 'src.utils.map_utils' has no attribute 'get_poscode_df'
 AttributeError: module 'src.utils.map_utils' has no attribute 'get_poscode_df'

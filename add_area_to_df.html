@@ -396,8 +396,9 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import os
 import pandas as pd
 import copy
-
+import src.data_loading.loads_from_url as lfu
 import src.utils.map_utils as mpu
+from src.data_loading.loads_from_url import get_poscode_df
 
 data_file = os.path.join(MAIN_PATH, &#39;src&#39;,&#39;utils&#39;, &#39;map_data&#39;,&#39;combined_data.csv&#39;)
 df = pd.read_csv(data_file,index_col=0)
@@ -663,23 +664,68 @@ df
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>map_data_file = os.path.join(MAIN_PATH, &quot;src&quot;, &quot;utils&quot;, &quot;map_data&quot;, &quot;postcode_to_region.csv&quot;)
-postcodes_df = mpu.get_poscode_df(path_to_csv = map_data_file)
+postcodes_df = lfu.get_poscode_df(path_to_csv = map_data_file)
+
+print(len(postcodes_df))
 postcodes_df.head()
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">map_data_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">MAIN_PATH</span><span class="p">,</span> <span class="s2">&quot;src&quot;</span><span class="p">,</span> <span class="s2">&quot;utils&quot;</span><span class="p">,</span> <span class="s2">&quot;map_data&quot;</span><span class="p">,</span> <span class="s2">&quot;postcode_to_region.csv&quot;</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">postcodes_df</span> <span class="o">=</span> <span class="n">mpu</span><span class="o">.</span><span class="n">get_poscode_df</span><span class="p">(</span><span class="n">path_to_csv</span> <span class="o">=</span> <span class="n">map_data_file</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">postcodes_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-
-<span class="ne">AttributeError</span>: module &#39;src.utils.map_utils&#39; has no attribute &#39;get_poscode_df&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1874663
 </pre></div>
 </div>
-</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Postcode</th>
+      <th>mapArea</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>AL1 1AG</td>
+      <td>Hertfordshire</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>AL1 1AJ</td>
+      <td>Hertfordshire</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>AL1 1AR</td>
+      <td>Hertfordshire</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>AL1 1AS</td>
+      <td>Hertfordshire</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>AL1 1AT</td>
+      <td>Hertfordshire</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 <section id="convert-the-postcode-to-area">
@@ -1131,7 +1177,7 @@ shorter_pc_list = get_postcode_list()
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>print( len(shorter_pc_list) )
-shorter_pc_list[1].head()
+shorter_pc_list[3].head()
 </pre></div>
 </div>
 </div>
@@ -1164,28 +1210,28 @@ shorter_pc_list[1].head()
   <tbody>
     <tr>
       <th>0</th>
-      <td>AB32 6P</td>
+      <td>AB2</td>
       <td>North East Scotland</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>AB32 6T</td>
+      <td>AB4</td>
       <td>North East Scotland</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>AB32 6S</td>
-      <td>North East Scotland</td>
+      <td>NP4</td>
+      <td>South East Wales</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>AB32 6R</td>
-      <td>North East Scotland</td>
+      <td>CR0</td>
+      <td>Greater London</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>AB32 6W</td>
-      <td>North East Scotland</td>
+      <td>NP9</td>
+      <td>South East Wales</td>
     </tr>
   </tbody>
 </table>
@@ -1220,7 +1266,9 @@ For postcode smaller by 1 characters
 Number postcodes not found 695 or 2.9%, not including 213 with no postcode
 
 For postcode smaller by 2 characters
-Number postcodes not found 213 or 0.9%, not including 213 with no postcode
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number postcodes not found 213 or 0.9%, not including 213 with no postcode
 
 For postcode smaller by 3 characters
 Number postcodes not found 95 or 0.4%, not including 213 with no postcode
@@ -1253,7 +1301,7 @@ def dothis(df, MAIN_PATH, shorter_pc_list,postcode_column = &#39;address_postcod
 
     # load postcode to area df
     map_data_file = os.path.join(MAIN_PATH, &quot;src&quot;, &quot;utils&quot;, &quot;map_data&quot;, &quot;postcode_to_region.csv&quot;)
-    postcodes_to_area_df = mpu.get_poscode_df(path_to_csv = map_data_file)
+    postcodes_to_area_df = lfu.get_poscode_df(path_to_csv = map_data_file)
     postcodes_to_area_df[&#39;removeChar&#39;]=0
     
     
@@ -1309,17 +1357,19 @@ newPC, df_add, df_pc = dothis(df, MAIN_PATH, shorter_pc_list)
  The length of postcode mapper is 1874663 
  and 147 still unknonwn
 
-&gt;&gt; Poscode length reduced by  1
-Number of new postcodes added 80
+&gt;&gt; Post-code length reduced by  1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of new postcodes added 80
 The length of postcode mapper is 1874743 
 and 67 still unknonwn
 
-&gt;&gt; Poscode length reduced by  2
+&gt;&gt; Post-code length reduced by  2
 Number of new postcodes added 18
 The length of postcode mapper is 1874761 
 and 49 still unknonwn
 
-&gt;&gt; Poscode length reduced by  3
+&gt;&gt; Post-code length reduced by  3
 Number of new postcodes added 27
 The length of postcode mapper is 1874788 
 and 22 still unknonwn
@@ -1329,147 +1379,15 @@ and 22 still unknonwn
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>df_pc
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>MAIN_PATH
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Postcode</th>
-      <th>mapArea</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>8</th>
-      <td>CU34</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>42</th>
-      <td>E74</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>195</th>
-      <td>CU34</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>199</th>
-      <td>WS77</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>206</th>
-      <td>PC21</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>303</th>
-      <td>CU31</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>326</th>
-      <td>EL5</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>377</th>
-      <td>Y12</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>378</th>
-      <td>B55</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>444</th>
-      <td>C06</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>477</th>
-      <td>HP24</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>518</th>
-      <td>CU31</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>542</th>
-      <td>PS14</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>647</th>
-      <td>BR10</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>825</th>
-      <td>DM14</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>830</th>
-      <td>CF51</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>843</th>
-      <td>B52</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>911</th>
-      <td>TM4</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1266</th>
-      <td>LH6</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1494</th>
-      <td>A11</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1611</th>
-      <td>HO6</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1623</th>
-      <td>TG2</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;C:\\Users\\44781\\Documents\\GitHub\\Pesticide&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1507,6 +1425,20 @@ df_pc = dfnew.loc[dfnew[&#39;mapArea&#39;].isna()].copy()
 
 
         
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">postcode_column</span> <span class="o">=</span> <span class="s1">&#39;address_postcode&#39;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">map_data_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">MAIN_PATH</span><span class="p">,</span> <span class="s2">&quot;src&quot;</span><span class="p">,</span> <span class="s2">&quot;utils&quot;</span><span class="p">,</span> <span class="s2">&quot;map_data&quot;</span><span class="p">,</span> <span class="s2">&quot;postcode_to_region.csv&quot;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">postcodes_to_area_df</span> <span class="o">=</span> <span class="n">mpu</span><span class="o">.</span><span class="n">get_poscode_df</span><span class="p">(</span><span class="n">path_to_csv</span> <span class="o">=</span> <span class="n">map_data_file</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">df_pc</span><span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="c1"># get the unique post-codes and ignore ones that don&#39;t exist =&#39;0&#39;</span>
+
+<span class="ne">AttributeError</span>: module &#39;src.utils.map_utils&#39; has no attribute &#39;get_poscode_df&#39;
 </pre></div>
 </div>
 </div>
