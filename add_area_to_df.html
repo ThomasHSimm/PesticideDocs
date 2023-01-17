@@ -407,256 +407,19 @@ df
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">src.data_loading.loads_from_url</span> <span class="k">as</span> <span class="nn">lfu</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">src.utils.map_utils</span> <span class="k">as</span> <span class="nn">mpu</span>
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="kn">from</span> <span class="nn">src.data_loading.loads_from_url</span> <span class="kn">import</span> <span class="n">get_poscode_df</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">data_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">MAIN_PATH</span><span class="p">,</span> <span class="s1">&#39;src&#39;</span><span class="p">,</span><span class="s1">&#39;utils&#39;</span><span class="p">,</span> <span class="s1">&#39;map_data&#39;</span><span class="p">,</span><span class="s1">&#39;combined_data.csv&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_file</span><span class="p">,</span><span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>sample_id</th>
-      <th>date_of_sampling</th>
-      <th>description</th>
-      <th>country_of_origin</th>
-      <th>retail_outlet</th>
-      <th>address</th>
-      <th>brand_name</th>
-      <th>packer_/_manufacturer_/_importer</th>
-      <th>pesticide_residues_found_in_mg/kg_(mrl)</th>
-      <th>product</th>
-      <th>address_postcode</th>
-      <th>packer__postcode</th>
-      <th>chem_name</th>
-      <th>amount_detected</th>
-      <th>mrl</th>
-      <th>amount_pc</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1958/2016</td>
-      <td>2016-08-08</td>
-      <td>Bramley Apples</td>
-      <td>UK</td>
-      <td>Asda</td>
-      <td>Creechbarrow Road, Taunton TA1 2AN</td>
-      <td>Asda</td>
-      <td>Asda Stores Ltd Leeds, UK LS11 5AD</td>
-      <td>boscalid 0.03 (MRL = 2)</td>
-      <td>Apple</td>
-      <td>TA1 2AN</td>
-      <td>LS11 5AD</td>
-      <td>boscalid</td>
-      <td>0.03</td>
-      <td>2.0</td>
-      <td>0.015000</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1958/2016</td>
-      <td>2016-08-08</td>
-      <td>Bramley Apples</td>
-      <td>UK</td>
-      <td>Asda</td>
-      <td>Creechbarrow Road, Taunton TA1 2AN</td>
-      <td>Asda</td>
-      <td>Asda Stores Ltd Leeds, UK LS11 5AD</td>
-      <td>pyraclostrobin 0.01 (MRL = 0.5)</td>
-      <td>Apple</td>
-      <td>TA1 2AN</td>
-      <td>LS11 5AD</td>
-      <td>pyraclostrobin</td>
-      <td>0.01</td>
-      <td>0.5</td>
-      <td>0.020000</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0230/2016</td>
-      <td>2016-08-08</td>
-      <td>Bramley Apples</td>
-      <td>UK</td>
-      <td>Co-op</td>
-      <td>Northgate, Louth LN11 0LT</td>
-      <td>Co-op</td>
-      <td>Co-operative Group Ltd Manchester M60 0AG</td>
-      <td>boscalid 0.05 (MRL = 2)</td>
-      <td>Apple</td>
-      <td>LN11 0LT</td>
-      <td>M60 0AG</td>
-      <td>boscalid</td>
-      <td>0.05</td>
-      <td>2.0</td>
-      <td>0.025000</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>0230/2016</td>
-      <td>2016-08-08</td>
-      <td>Bramley Apples</td>
-      <td>UK</td>
-      <td>Co-op</td>
-      <td>Northgate, Louth LN11 0LT</td>
-      <td>Co-op</td>
-      <td>Co-operative Group Ltd Manchester M60 0AG</td>
-      <td>flonicamid (sum) 0.02 (MRL = 0.2)</td>
-      <td>Apple</td>
-      <td>LN11 0LT</td>
-      <td>M60 0AG</td>
-      <td>flonicamid (sum)</td>
-      <td>0.02</td>
-      <td>0.2</td>
-      <td>0.100000</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0230/2016</td>
-      <td>2016-08-08</td>
-      <td>Bramley Apples</td>
-      <td>UK</td>
-      <td>Co-op</td>
-      <td>Northgate, Louth LN11 0LT</td>
-      <td>Co-op</td>
-      <td>Co-operative Group Ltd Manchester M60 0AG</td>
-      <td>pyraclostrobin 0.03 (MRL = 0.5)</td>
-      <td>Apple</td>
-      <td>LN11 0LT</td>
-      <td>M60 0AG</td>
-      <td>pyraclostrobin</td>
-      <td>0.03</td>
-      <td>0.5</td>
-      <td>0.060000</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>23947</th>
-      <td>0792/2022</td>
-      <td>2022-09-08</td>
-      <td>Marfona Unwashed Potatoes</td>
-      <td>UK</td>
-      <td>Stoke Fruit Farm</td>
-      <td>77 Havant Road, Hayling Island, Hampshire PO11...</td>
-      <td>None stated</td>
-      <td>Stoke Fruit Farm 77 Havant Road, Hayling Islan...</td>
-      <td>maleic hydrazide 7.7 (MRL = 60)</td>
-      <td>Potatoes_(GB)</td>
-      <td>PO11 0PT</td>
-      <td>PO11 0PT</td>
-      <td>maleic hydrazide</td>
-      <td>7.70</td>
-      <td>60.0</td>
-      <td>0.128333</td>
-    </tr>
-    <tr>
-      <th>23948</th>
-      <td>0765/2022</td>
-      <td>2022-09-14</td>
-      <td>Sagitta Potatoes</td>
-      <td>UK</td>
-      <td>Total Produce Ltd.</td>
-      <td>Callywith Gate Industrial Estate, Launceston R...</td>
-      <td>None stated</td>
-      <td>CS Duston &amp; Son Colwith Farm, Par, Cornwall</td>
-      <td>maleic hydrazide 17 (MRL = 60)</td>
-      <td>Potatoes_(GB)</td>
-      <td>PL31 2RQ</td>
-      <td>0</td>
-      <td>maleic hydrazide</td>
-      <td>17.00</td>
-      <td>60.0</td>
-      <td>0.283333</td>
-    </tr>
-    <tr>
-      <th>23949</th>
-      <td>0938/2022</td>
-      <td>2022-09-01</td>
-      <td>Marfona Ware Potatoes</td>
-      <td>UK</td>
-      <td>Tulipland Potatoes Ltd</td>
-      <td>Fengate, Moulton Chapel PE12 0XL</td>
-      <td>None stated</td>
-      <td>Garden of Elveden</td>
-      <td>NaN</td>
-      <td>Potatoes_(GB)</td>
-      <td>PE12 0XL</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.00</td>
-      <td>0.0</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>23950</th>
-      <td>0833/2022</td>
-      <td>2022-08-31</td>
-      <td>Lady Rosetta</td>
-      <td>England (UK)</td>
-      <td>Tyrrells Crisps</td>
-      <td>Tyrrells Court, Stretford Bridge, Leominster H...</td>
-      <td>None stated</td>
-      <td>KP Crisps</td>
-      <td>NaN</td>
-      <td>Potatoes_(GB)</td>
-      <td>HR6 9DQ</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.00</td>
-      <td>0.0</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>23951</th>
-      <td>0833/2022</td>
-      <td>2022-08-31</td>
-      <td>Lady Rosetta</td>
-      <td>England (UK)</td>
-      <td>Tyrrells Crisps</td>
-      <td>Tyrrells Court, Stretford Bridge, Leominster H...</td>
-      <td>None stated</td>
-      <td>KP Crisps</td>
-      <td>NaN</td>
-      <td>Potatoes_(GB)</td>
-      <td>HR6 9DQ</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.00</td>
-      <td>0.0</td>
-      <td>0.000000</td>
-    </tr>
-  </tbody>
-</table>
-<p>23952 rows × 16 columns</p>
-</div></div></div>
+<span class="ne">ImportError</span>: cannot import name &#39;get_poscode_df&#39; from &#39;src.data_loading.loads_from_url&#39; (C:\Users\44781\Documents\GitHub\Pesticide\src\data_loading\loads_from_url.py)
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="load-the-poscode-data">
@@ -1263,9 +1026,7 @@ for removeChar in range(0,6):
 Number postcodes not found 1435 or 6.0%, not including 213 with no postcode
 
 For postcode smaller by 1 characters
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number postcodes not found 695 or 2.9%, not including 213 with no postcode
+Number postcodes not found 695 or 2.9%, not including 213 with no postcode
 
 For postcode smaller by 2 characters
 Number postcodes not found 213 or 0.9%, not including 213 with no postcode
@@ -1358,9 +1119,7 @@ newPC, df_add, df_pc = dothis(df, MAIN_PATH, shorter_pc_list)
  and 147 still unknonwn
 
 &gt;&gt; Post-code length reduced by  1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of new postcodes added 80
+Number of new postcodes added 80
 The length of postcode mapper is 1874743 
 and 67 still unknonwn
 
